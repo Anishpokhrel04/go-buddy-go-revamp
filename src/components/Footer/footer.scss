@@ -1,0 +1,109 @@
+:root {
+  --primaryColor: #00eaff;
+  --primaryHover: hsl(185, 92%, 41%);
+  --secondaryColor: rgb(150, 162, 188);
+  --paragraphColor: rgb(127, 127, 175);
+  --BgColor: #031430;
+  --formColor: rgb(2, 15, 29);
+  --projectCardColor: #072340;
+  --textColor: #dae4fb;
+  --headerHeight: 3rem;
+}
+.footer {
+  padding: 1rem;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  border-bottom: 20px solid var(--BgColor);
+
+  // background-color: var(--paragraphColor);
+  .top-div {
+    display: flex;
+    .first-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      img {
+        height: 30vh;
+        width: 20vw;
+      }
+      p {
+        color: var(--textColor);
+        font-size: 15px;
+        width: 55%;
+        line-height: 1.8;
+      }
+      .icon {
+        color: var(--textColor);
+        font-size: 20px;
+        margin: 1rem;
+        .ico {
+          font-size: 30px;
+          margin-right: 0.5rem;
+          &:hover {
+            color: var(--primaryColor);
+          }
+        }
+      }
+    }
+    .second-div {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1rem;
+      color: var(--textColor);
+      .h-5 {
+        font-size: 30px;
+      }
+      .icon-text {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .icon {
+          font-size: 25px;
+          &:hover {
+            color: var(--primaryColor);
+          }
+        }
+      }
+    }
+
+    .third-div {
+      margin-left: 6rem;
+      h5 {
+        margin-top: 1.5rem;
+        font-size: 30px;
+        color: var(--textColor);
+      }
+      .logo-div {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        img {
+          height: 10vh;
+          width: 10vw;
+          color: var(--primaryColor);
+        }
+      }
+    }
+  }
+  .last-div {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      color: var(--textColor);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+}

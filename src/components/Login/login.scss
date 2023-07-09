@@ -1,0 +1,105 @@
+// * {
+//   background: rgb(233, 228, 228);
+// }
+
+:root {
+  --primaryColor: #00eaff;
+  --primaryHover: hsl(185, 92%, 41%);
+  --secondaryColor: rgb(150, 162, 188);
+  --paragraphColor: rgb(127, 127, 175);
+  --BgColor: #031430;
+  --formColor: rgb(2, 15, 29);
+  --projectCardColor: #072340;
+  --textColor: #dae4fb;
+  --headerHeight: 3rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  .login-card {
+    background-color: var(--projectCardColor);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    color: var(--textColor);
+
+    img {
+      height: 100px;
+      width: 150px;
+    }
+
+    .text-div {
+      gap: 0.1px;
+
+      .h3-b {
+        display: flex;
+        gap: 1rem;
+        font-size: 20px;
+        align-items: center;
+        color: var(--secondaryColor);
+        .h3-o {
+          font-size: 25px;
+          color: var(--primaryColor);
+          font-weight: bold;
+        }
+      }
+      p {
+        font-weight: bold;
+        font-size: 15px;
+        color: grey;
+      }
+    }
+
+    .textarea-div {
+      display: flex;
+      flex-direction: column;
+      label {
+        padding-bottom: 0.2rem;
+        margin-left: 0.2rem;
+      }
+      input {
+        width: 80%;
+        height: 2.5rem;
+        border-radius: 10px;
+        border: none;
+        background-color: var(--secondaryColor);
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .btn-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    button {
+      padding: 0.5rem 3rem;
+      background: var(--primaryColor);
+      color: var(--BgColor);
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--primaryHover);
+      }
+    }
+    h5 {
+      color: grey;
+    }
+  }
+}

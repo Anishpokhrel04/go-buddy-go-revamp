@@ -1,0 +1,134 @@
+:root {
+  --primaryColor: #00eaff;
+  --primaryHover: hsl(185, 92%, 41%);
+  --secondaryColor: rgb(150, 162, 188);
+  --paragraphColor: rgb(127, 127, 175);
+  --BgColor: #031430;
+  --formColor: rgb(2, 15, 29);
+  --projectCardColor: #072340;
+  --textColor: #dae4fb;
+  --headerHeight: 3rem;
+}
+
+.popular {
+  margin: 0 5rem;
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    position: absolute;
+    margin-top: -5rem;
+    margin-left: 1rem;
+    color: var(--primaryColor);
+    font-size: bold;
+    .underline {
+      content: "";
+      left: 0;
+      width: 100%;
+      height: 3px;
+      top: 5px;
+      position: relative;
+      border-radius: 10px;
+      background: var(--secondaryColor);
+      overflow: hidden;
+
+      .underline,
+      span {
+        top: 0;
+        left: 10px;
+        width: 10px;
+        border-radius: 10px;
+        height: 100%;
+        position: absolute;
+        background-color: var(--textColor);
+        animation: moveLine 2s linear infinite;
+
+        @keyframes moveLine {
+          0% {
+            left: -20px;
+          }
+
+          100% {
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+  .icon {
+    font-size: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--textColor);
+    margin-top: 12rem;
+
+    &:hover {
+      color: var(--textColor);
+      background-color: var(--primaryColor);
+    }
+  }
+
+  .popular-card {
+    height: 60vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+
+    .img-div {
+      height: 45vh;
+      width: 20vw;
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      align-items: center;
+      border-radius: 30px 30px 0px 0px;
+      border: 2px solid var(--primaryColor);
+
+      &:hover {
+        border: 2px solid var(--primaryHover);
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .text-div {
+      height: 15vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--textColor);
+      background-color: var(--paragraphColor);
+      color: var(--textColor);
+      font-weight: bold;
+      z-index: -1;
+
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+  .icon {
+    font-size: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--textColor);
+    margin-top: 12rem;
+
+    &:hover {
+      color: var(--textColor);
+      background-color: var(--primaryColor);
+    }
+  }
+}

@@ -1,0 +1,184 @@
+:root {
+  --primaryColor: #00eaff;
+  --primaryHover: hsl(185, 92%, 41%);
+  --secondaryColor: rgb(150, 162, 188);
+  --paragraphColor: rgb(127, 127, 175);
+  --BgColor: #031430;
+  --formColor: rgb(2, 15, 29);
+  --projectCardColor: #072340;
+  --textColor: #dae4fb;
+  --headerHeight: 3rem;
+}
+
+.services {
+  margin-top: 2rem;
+  background-color: #efefef;
+  padding-top: 1rem;
+  // border: 1px solid var(--primaryColor);
+  border-radius: 5px solid var(--primaryColor);
+
+  .div {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .h-2 {
+      font-size: 25px;
+      color: var(--primaryColor);
+      font-weight: bold;
+      .underline {
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: var(--secondaryColor);
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
+          border-radius: 10px;
+          height: 100%;
+          position: absolute;
+          background-color: var(--textColor);
+          animation: moveLine 2s linear infinite;
+
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
+
+            100% {
+              left: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      color: var(--paragraphColor);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    p {
+      color: var(--textColor);
+      width: 30%;
+      text-align: justify;
+      font-size: 15px;
+    }
+  }
+
+  .service-card {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50vh;
+    position: relative;
+
+    .bus-card {
+      margin-bottom: -5rem;
+      border-radius: 2rem;
+      border: 3px solid var(--primaryColor);
+      background-color: var(--projectCardColor);
+      height: 70vh;
+      width: 20vw;
+      position: absolute;
+      border: 3px solid var(--primaryColor);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .img-div {
+        height: 15rem;
+        width: 18vw;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+          .overlay {
+            bottom: 0;
+            height: 100%;
+          }
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+
+          .img {
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover;
+          }
+        }
+        .overlay {
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          right: 0;
+          background: linear-gradient(#019587, #fff);
+          overflow: hidden;
+          width: 100%;
+          height: 0;
+          transition: 0.5s ease;
+          opacity: 93%;
+          border-radius: 20px;
+
+          .text {
+            color: white;
+            font-size: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    .btn-div {
+      margin-top: 2rem;
+      button {
+        padding: 0.5rem 2rem;
+        background: var(--primaryColor);
+        color: var(--BgColor);
+        font-weight: bold;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: var(--primaryHover);
+          color: var(--textColor);
+        }
+      }
+    }
+  }
+
+  .bus-card:nth-child(1) {
+    left: calc(50% - 40vw);
+  }
+
+  .bus-card:nth-child(2) {
+    left: calc(50% - 10vw);
+  }
+
+  .bus-card:nth-child(3) {
+    left: calc(50% + 20vw);
+  }
+}
