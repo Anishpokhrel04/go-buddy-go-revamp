@@ -1,9 +1,9 @@
 :root {
   --primaryColor: #009688;
-  --primaryHover: linear-gradient(#019587, #fff);
+  --primaryHover: rgba(2, 136, 123);
   --secondaryColor: rgb(150, 162, 188);
   --paragraphColor: rgb(127, 127, 175);
-  --BgColor: linear-gradient(rgba(0, 0, 0, 0.5), #009688);
+  --BgColor: rgb(0, 0, 0);
   --formColor: #032925;
   --projectCardColor: #072340;
   --textColor: black;
@@ -58,7 +58,7 @@
       color: var(--iconColor);
 
       .h-3 {
-        color: var(--primaryColor);
+        color: var(--textColor);
         font-size: 25px;
         font-weight: 700;
         padding-top: 0.5rem;

@@ -6,6 +6,7 @@ import img7 from "../../assets/img7.jpg";
 
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
+import { useState } from "react";
 
 const PopularCardData = [
   {
@@ -37,6 +38,19 @@ const PopularCardData = [
 ];
 
 const Popular = () => {
+  const [currentCard, setCurrentCard] = useState(0);
+
+  const goToPrevCard = () => {
+    setCurrentCard((pervCard) =>
+      pervCard === 0 ? PopularCardData.length - 1 : pervCard - 1
+    );
+  };
+
+  const goToNextCard = () => {
+    setCurrentCard((pervCard) =>
+      pervCard === PopularCardData.length - 1 ? 0 : pervCard + 1
+    );
+  };
   return (
     <div className="popular">
       <h1>
@@ -45,22 +59,26 @@ const Popular = () => {
           <span></span>
         </div>
       </h1>
-      <GrFormPreviousLink className="icon" />
+      <GrFormPreviousLink className="icon" onClick={goToPrevCard} />
 
-      {PopularCardData.map((item) => {
-        return (
-          <div className="popular-card" key={item.id}>
-            <div className="img-div">
-              <img src={item.imgSrc} alt="" />
+      {PopularCardData.map((item, index) => {
+        if (index === currentCard) {
+          return (
+            <div className="popular-card" key={item.id}>
+              <div className="img-div">
+                <img src={item.imgSrc} alt="" />
+              </div>
+              <div className="text-div">
+                <h3>{item.cardTitle}</h3>
+                <br />
+                <p>{item.stays}</p>
+              </div>
             </div>
-            <div className="text-div">
-              <h3>{item.cardTitle}</h3>
-              <p>{item.stays}</p>
-            </div>
-          </div>
-        );
+          );
+        }
+        return null;
       })}
-      <GrFormNextLink className="icon" />
+      <GrFormNextLink className="icon" onClick={goToNextCard} />
     </div>
   );
 };

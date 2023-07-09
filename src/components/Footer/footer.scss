@@ -1,13 +1,14 @@
 :root {
-  --primaryColor: #00eaff;
-  --primaryHover: hsl(185, 92%, 41%);
+  --primaryColor: #009688;
+  --primaryHover: rgba(2, 136, 123);
   --secondaryColor: rgb(150, 162, 188);
   --paragraphColor: rgb(127, 127, 175);
-  --BgColor: #031430;
-  --formColor: rgb(2, 15, 29);
+  --BgColor: rgb(0, 0, 0);
+  --formColor: #032925;
   --projectCardColor: #072340;
-  --textColor: #dae4fb;
+  --textColor: black;
   --headerHeight: 3rem;
+  --iconColor: #ffff;
 }
 .footer {
   padding: 1rem;
@@ -35,7 +36,7 @@
       }
       .icon {
         color: var(--textColor);
-        font-size: 20px;
+        font-size: 16px;
         margin: 1rem;
         .ico {
           font-size: 30px;
@@ -54,7 +55,7 @@
       gap: 1rem;
       color: var(--textColor);
       .h-5 {
-        font-size: 30px;
+        font-size: 25px;
       }
       .icon-text {
         display: flex;
@@ -74,7 +75,7 @@
       margin-left: 6rem;
       h5 {
         margin-top: 1.5rem;
-        font-size: 30px;
+        font-size: 25px;
         color: var(--textColor);
       }
       .logo-div {

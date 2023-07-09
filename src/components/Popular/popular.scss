@@ -1,13 +1,14 @@
 :root {
-  --primaryColor: #00eaff;
-  --primaryHover: hsl(185, 92%, 41%);
+  --primaryColor: #009688;
+  --primaryHover: rgba(2, 136, 123);
   --secondaryColor: rgb(150, 162, 188);
   --paragraphColor: rgb(127, 127, 175);
-  --BgColor: #031430;
-  --formColor: rgb(2, 15, 29);
+  --BgColor: rgb(0, 0, 0);
+  --formColor: #032925;
   --projectCardColor: #072340;
-  --textColor: #dae4fb;
+  --textColor: black;
   --headerHeight: 3rem;
+  --iconColor: #ffff;
 }
 
 .popular {
@@ -75,47 +76,44 @@
     width: 20vw;
     display: flex;
     flex-direction: column;
+    position: relative;
+    text-align: center;
 
     .img-div {
-      height: 45vh;
-      width: 20vw;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: flex;
       justify-content: center;
       overflow: hidden;
       align-items: center;
-      border-radius: 30px 30px 0px 0px;
       border: 2px solid var(--primaryColor);
-
-      &:hover {
-        border: 2px solid var(--primaryHover);
-      }
+      position: absolute;
 
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
         overflow: hidden;
-        &:hover {
-          transform: scale(1.1);
-        }
       }
     }
 
     .text-div {
       height: 15vh;
+      width: 100%;
+      bottom: 0;
+      object-fit: cover;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      border: 3px solid var(--textColor);
-      background-color: var(--paragraphColor);
-      color: var(--textColor);
-      font-weight: bold;
-      z-index: -1;
-
+      overflow: hidden;
+      align-items: center;
+      border: 2px solid var(--primaryColor);
+      position: absolute;
+      background-color: var(--projectCardColor);
+      border: none;
       &:hover {
-        opacity: 0;
+        background-color: #032925;
+        color: white;
       }
     }
   }
@@ -123,11 +121,11 @@
     font-size: 35px;
     border: none;
     border-radius: 50px;
-    background-color: var(--textColor);
     margin-top: 12rem;
+    background-color: var(--primaryColor);
 
     &:hover {
-      color: var(--textColor);
+      color: white;
       background-color: var(--primaryColor);
     }
   }

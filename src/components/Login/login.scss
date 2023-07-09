@@ -3,15 +3,16 @@
 // }
 
 :root {
-  --primaryColor: #00eaff;
-  --primaryHover: hsl(185, 92%, 41%);
+  --primaryColor: #009688;
+  --primaryHover: rgba(2, 136, 123);
   --secondaryColor: rgb(150, 162, 188);
   --paragraphColor: rgb(127, 127, 175);
-  --BgColor: #031430;
-  --formColor: rgb(2, 15, 29);
+  --BgColor: rgb(0, 0, 0);
+  --formColor: #032925;
   --projectCardColor: #072340;
-  --textColor: #dae4fb;
+  --textColor: black;
   --headerHeight: 3rem;
+  --iconColor: #ffff;
 }
 
 .login {
@@ -20,7 +21,7 @@
   align-items: center;
   margin-top: 3rem;
   .login-card {
-    background-color: var(--projectCardColor);
+    background-color: var(--formColor);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     width: 30vw;
     display: flex;
@@ -28,7 +29,7 @@
     gap: 1rem;
     padding: 2rem;
     border-radius: 10px;
-    color: var(--textColor);
+    color: var(--iconColor);
 
     img {
       height: 100px;
@@ -46,7 +47,7 @@
         color: var(--secondaryColor);
         .h3-o {
           font-size: 25px;
-          color: var(--primaryColor);
+          color: var(--iconColor);
           font-weight: bold;
         }
       }
