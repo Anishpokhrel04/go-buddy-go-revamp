@@ -52,33 +52,36 @@ const Popular = () => {
     );
   };
   return (
-    <div className="popular">
+    <div className="popular container">
       <h1>
         Popular Destination
         <div className="underline">
           <span></span>
         </div>
       </h1>
-      <GrFormPreviousLink className="icon" onClick={goToPrevCard} />
+      <div className="icon-text">
+        <GrFormPreviousLink className="icon" onClick={goToPrevCard} />
 
-      {PopularCardData.map((item, index) => {
-        if (index === currentCard) {
-          return (
-            <div className="popular-card" key={item.id}>
-              <div className="img-div">
-                <img src={item.imgSrc} alt="" />
+        {PopularCardData.map((item, index) => {
+          if (index === currentCard) {
+            return (
+              <div className="popular-card" key={item.id}>
+                <div className="img-div">
+                  <img src={item.imgSrc} alt="" />
+
+                  <div className="text-div">
+                    <h3>{item.cardTitle}</h3>
+                    <br />
+                    <p>{item.stays}</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-div">
-                <h3>{item.cardTitle}</h3>
-                <br />
-                <p>{item.stays}</p>
-              </div>
-            </div>
-          );
-        }
-        return null;
-      })}
-      <GrFormNextLink className="icon" onClick={goToNextCard} />
+            );
+          }
+          return null;
+        })}
+        <GrFormNextLink className="icon icons" onClick={goToNextCard} />
+      </div>
     </div>
   );
 };

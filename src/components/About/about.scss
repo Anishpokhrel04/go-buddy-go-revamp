@@ -1,31 +1,35 @@
-// :root {
+
 $primaryColor: #009688;
-$primaryHover: rgb(2, 136, 123);
-$secondaryColor: rgb(150, 162, 188);
-$paragraphColor: rgb(127, 127, 175);
-$BgColor: rgb(0, 0, 0);
-$formColor: #032925;
-$projectCardColor: #072340;
-$textColor: black;
-$headerHeight: 3rem;
-$iconColor: #ffff;
-// }
+  $primaryHover: rgba(2, 136, 123);
+  $secondaryColor: rgb(150, 162, 188);
+  $paragraphColor: rgb(127, 127, 175);
+  $bgColor: rgb(0, 0, 0);
+  $formColor:  hsl(151.62deg 7.63% 84.82%);
+  $projectCardColor: #072340;
+  $textColor: black;
+  $headerHeight: 3rem;
+  $iconColor: #ffff;
+  $btnBackground: #df912c;
+$btnHoverColor: #714c1c;
+
 
 .about {
   background-color: transparent;
-  margin-top: 8rem;
+  margin-top: 15rem;
+  width: 100%;
   .secAbout {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .img-div {
-      height: 500px;
-      width: 250px;
+      height: 550px;
+      width: 150px;
       object-fit: cover;
       margin-top: 2rem;
       margin-left: 4rem;
       background-color: transparent;
       flex-basis: 25%;
+      display: block;
 
       .imgs {
         height: 100%;
@@ -34,8 +38,7 @@ $iconColor: #ffff;
         border-radius: 10rem;
         z-index: -1;
         background-color: transparent;
-        border: 3px solid $textColor;
-        box-shadow: -10px -8px 5px 10px $primaryHover;
+        box-shadow: -5px -5px 5px 5px $formColor;
         animation: slightMovement 4s ease-in-out infinite;
 
         @keyframes slightMovement {
@@ -52,15 +55,14 @@ $iconColor: #ffff;
       }
       .img2 {
         position: absolute;
-        height: 300px;
-        width: 200px;
+        height: 250px;
+        width: 180px;
         object-fit: cover;
         border-radius: 50px;
         margin-left: -3rem;
-        margin-top: 7rem;
-        z-index: 1000;
+        margin-top: 9rem;
+        z-index: 1;
         background-color: transparent;
-        border: 5px solid $primaryColor;
         animation: slightMovement 4s ease-in-out infinite;
 
         @keyframes slightMovement {
@@ -123,27 +125,122 @@ $iconColor: #ffff;
       }
 
       h2 {
-        color: $primaryColor;
-        font-size: bold;
+        font-size: 15px;
+        color: $textColor;
         margin-top: 1rem;
+        width: 100%;
       }
 
       p {
         color: $textColor;
         font-size: 15px;
+        width: 100%;
       }
       button {
         margin-top: 1rem;
         padding: 0.5rem 1rem;
         border-radius: 10px;
         font-size: 15px;
-        font-weight: bold;
         border: none;
         background-color: $primaryColor;
+        color: $iconColor;
 
         &:hover {
           color: white;
           background-color: $primaryHover;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .about {
+    .secAbout {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .img-div {
+        height: 400px;
+        width: 300px;
+        object-fit: cover;
+        margin-top: 1rem;
+        margin-left: 3rem;
+        background-color: transparent;
+        flex-basis: 25%;
+
+        .img2 {
+          position: absolute;
+          height: 200px;
+          width: 150px;
+          object-fit: cover;
+          border-radius: 50px;
+          margin-left: -3rem;
+          margin-top: 7rem;
+        }
+      }
+      .txt-div {
+        font-size: 15px;
+        margin-right: 1rem;
+        h2 {
+          width: 98%;
+        }
+        p {
+          width: 97%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about {
+    
+    margin-top: 45rem;
+    .secAbout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .img-div {
+        height: 900px;
+        width: 290px;
+        margin-left: -5rem;
+        position: absolute;
+        background-color: transparent;
+        margin-bottom: 1rem;
+
+        .imgs {
+          margin-left: 0rem;
+          height: 50%;
+          width: 100%;
+        }
+
+        .img2 {
+          position: absolute;
+          height: 200px;
+          width: 150px;
+          object-fit: cover;
+          border-radius: 50px;
+          margin-left: -4\3rem;
+          margin-top: 7rem;
+          z-index: 1;
+        }
+      }
+      .txt-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 45rem;
+        width: 100%;
+
+        h2 {
+          width: 100%;
+          margin-left: 1rem;
+        }
+        p {
+          width: 100%;
+          margin-left: 1rem;
         }
       }
     }

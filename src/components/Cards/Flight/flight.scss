@@ -1,259 +1,419 @@
-:root {
-  --primaryColor: #009688;
-  --primaryHover: rgba(2, 136, 123);
-  --secondaryColor: rgb(150, 162, 188);
-  --paragraphColor: rgb(127, 127, 175);
-  --BgColor: rgb(0, 0, 0);
-  --formColor: #032925;
-  --projectCardColor: #072340;
-  --textColor: black;
-  --headerHeight: 3rem;
-  --iconColor: #ffff;
-}
+// // :root {
+// $primaryColor: #009688;
+// $primaryHover: rgba(2, 136, 123);
+// $secondaryColor: rgb(150, 162, 188);
+// $paragraphColor: rgb(127, 127, 175);
+// $bgColor: rgb(0, 0, 0);
+// $formColor: hsl(151.62deg 7.63% 84.82%);
+// $projectCardColor: #072340;
+// $textColor: black;
+// $headerHeight: 3rem;
+// $iconColor: #ffff;
+// $btnBackground: #df912c;
+// $btnHoverColor: #714c1c;
+// // }
 
-.flight {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-  position: absolute;
-  left: calc(13%);
+// .flight {
+//   margin-top: 20rem;
+//   width: 100%;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
 
-  .flight-card {
-    background-color: var(--formColor);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    color: var(--textColor);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: max-content;
-    width: max-content;
-    border: 3px solid var(--primaryColor);
+//   .flight-card {
+//     background-color: $formColor;
+//     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+//     border-radius: 10px;
+//     color: var(--textColor);
+//     display: flex;
+//     flex-direction: column;
+//     position: absolute;
+//     padding: 2rem 2rem;
+//     align-items: center;
+//     justify-content: center;
+//     height: max-content;
+//     width: max-content;
 
-    .main-textarea-div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2rem;
-      margin-left: 2rem;
-      margin-bottom: 2rem;
-      gap: 2rem;
+//     &:hover {
+//       box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5);
+//     }
 
-      .second-textarea-div {
-        padding-right: 2rem;
-        display: flex;
-        gap: 3rem;
-        .textarea-div {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
+//     .main-textarea-div {
+//       margin-top: 3rem;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 2rem;
 
-          label {
-            padding-bottom: 0.2rem;
-            margin-left: 0.2rem;
-            font-size: 20px;
-            font-weight: 400;
-            color: var(--iconColor);
-          }
+//       .second-textarea-div {
+//         display: flex;
+//         gap: 1rem;
+//         .textarea-div {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 0.5rem;
 
-          .inputs {
-            width: 20vw;
-            outline: none;
-            box-shadow: none;
-            &::placeholder {
-              font-size: 15px;
-              font-weight: bold;
-            }
-            &:focus {
-              color: black;
-              font-weight: bold;
-            }
-          }
+//           label {
+//             font-size: 18px;
+//             font-weight: 400;
+//             color: $textColor;
+//             padding-left: 0.5rem;
+//           }
 
-          .input {
-            width: 20vw;
-            padding: 0.7rem 0;
-            border-radius: 3px;
-            border: none;
-            background-color: white;
-            &::placeholder {
-              color: grey;
-              font-size: 15px;
-              padding-left: 2rem;
-              font-weight: bold;
-            }
+//           .inputs {
+//             width: 290px;
+//             outline: none;
+//             box-shadow: none;
+//             &::placeholder {
+//               font-size: 15px;
+//             }
+//             &:focus {
+//               color: black;
+//             }
+//           }
 
-            &:focus {
-              border: none;
-              outline: none;
-              color: var(--textColor);
-              font-weight: bold;
-              padding-left: 2rem;
-            }
-          }
-          .date-inputs {
-            width: 20vw;
-            border: none;
-            padding: 0.7rem 0;
-            border-radius: 3px;
-            &::placeholder {
-              font-size: 15px;
-              font-weight: bold;
-              padding: 2rem;
-            }
+//           .input {
+//             width: 290px;
+//             padding: 0.7rem 0;
+//             border-radius: 3px;
+//             border: none;
+//             background-color: white;
+//             &::placeholder {
+//               color: grey;
+//               font-size: 15px;
+//               padding-left: 2rem;
+//             }
 
-            &:focus {
-              outline: none;
-              border: none;
-            }
-          }
-        }
+//             &:focus {
+//               border: none;
+//               outline: none;
+//               color: $textColor;
+//               padding-left: 2rem;
+//             }
+//           }
+//           .date-inputs {
+//             width: 290px;
+//             border: none;
+//             padding: 0.7rem 0;
+//             border-radius: 3px;
+//             &::placeholder {
+//               font-size: 15px;
 
-        // for passenger
-        .passenger-box {
-          position: absolute;
-          gap: 0.5rem;
-          margin-left: 12rem;
-          margin-top: 5.5rem;
-          padding: 1rem;
-          font-size: 15px;
-          border: 1px solid var(--primaryColor);
-          .passenger-buttons {
-            padding-right: 1rem;
-            font-size: 15px;
-            button {
-              padding: 1px 3px;
-              color: var(--primaryColor);
-              color: var(--BgColor);
-            }
-          }
-        }
-      }
-    }
-  }
-  .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+//               padding: 2rem;
+//             }
 
-    button {
-      padding: 0.5rem 2rem;
-      color: var(--BgColor);
-      font-size: 15px;
-      font-weight: bold;
-      background-color: var(--primaryColor);
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 10px;
-      &:hover {
-        color: white;
-        background-color: rgba(2, 136, 123);
-      }
-    }
-  }
-}
+//             &:focus {
+//               outline: none;
+//               border: none;
+//             }
+//           }
+//         }
 
-//for bus card
+//         // for passenger
+//         .passenger-box {
+//           position: absolute;
+//           margin-left: 5rem;
+//           margin-top: 5.5rem;
+//           font-size: 15px;
 
-.bus-card {
-  height: 30vh;
-  width: max-content;
-  background-color: var(--formColor);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  color: var(--textColor);
-  display: flex;
-  justify-content: center;
-  border: 3px solid var(--primaryColor);
-  .second-textarea-div {
-    margin: 3rem 1.8rem 0 1.8rem;
-    display: flex;
+//           .passenger-buttons {
+//             padding-right: 1rem;
+//             font-size: 15px;
+//             button {
+//               padding: 1px 5px;
+//               background-color: $primaryColor;
+//               color: $iconColor;
+//               gap: 1rem;
+//               margin: 0.5rem 1rem;
+//               border: none;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 2rem;
 
-    .textarea-div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      height: 100%;
-      gap: 0.5rem;
+//     button {
+//       padding: 0.5rem 2rem;
+//       color: var(--BgColor);
+//       font-size: 15px;
+//       background-color: $primaryColor;
+//       border: none;
+//       border-radius: 10px;
+//       color: white;
+//       &:hover {
+//         color: white;
+//         background-color: $primaryHover;
+//       }
+//     }
+//   }
 
-      label {
-        padding-bottom: 0.2rem;
-        margin-left: 0.2rem;
-        font-size: 20px;
-        font-weight: 400;
-        color: var(--iconColor);
-      }
+//   //for bus card
 
-      .inputs {
-        width: 20vw;
-        outline: none;
-        box-shadow: none;
-        &::placeholder {
-          font-size: 15px;
-          font-weight: bold;
-        }
-        &:focus {
-          color: black;
-          font-weight: bold;
-        }
-      }
+//   .bus-card {
+//     height: 280px;
+//     width: max-content;
+//     background-color: $formColor;
+//     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+//     border-radius: 10px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     margin-top: -10rem;
+//     .second-textarea-div {
+//       margin: 3rem 1.8rem 0 1.8rem;
+//       display: flex;
 
-      .date-inputs {
-        width: 20vw;
-        border: none;
-        padding: 0.7rem 0;
-        border-radius: 3px;
-        &::placeholder {
-          font-size: 15px;
-          font-weight: bold;
-          padding: 2rem;
-        }
+//       .textarea-div {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 0.5rem;
 
-        &:focus {
-          outline: none;
-          border: none;
-        }
-      }
-    }
-  }
-}
+//         label {
+//           padding-bottom: 0.2rem;
+//           margin-left: 0.2rem;
+//           font-size: 20px;
+//           font-weight: 400;
+//           color: $textColor;
+//         }
 
-.bus-btn {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .bus-button {
-    padding: 0.5rem 2rem;
-    color: var(--BgColor);
-    font-size: 15px;
-    font-weight: bold;
-    background-color: var(--primaryColor);
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 10px;
-    &:hover {
-      color: white;
-      background-color: rgba(2, 136, 123);
-    }
-  }
-}
+//         .inputs {
+//           width: 250px;
+//           outline: none;
+//           box-shadow: none;
+//           &::placeholder {
+//             font-size: 15px;
+//           }
+//           &:focus {
+//             color: black;
+//           }
+//         }
 
-.flight{
-  display: flex;
-.option-select {
-  position: absolute;
-  top: -1rem;
-  .last-select {
-    display: flex;
-    left: 0;
-    bottom: 0;
-  }
-}
-}
+//         .date-inputs {
+//           width: 250px;
+//           border: none;
+//           padding: 0.7rem 0;
+//           border-radius: 3px;
+//           &::placeholder {
+//             font-size: 15px;
+//             padding: 2rem;
+//           }
 
+//           &:focus {
+//             outline: none;
+//             border: none;
+//           }
+//         }
+//       }
+//     }
+//   }
 
+//   .bus-btn {
+//     position: absolute;
+//     left: 45%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 12rem;
+//     .bus-button {
+//       padding: 0.5rem 2rem;
+//       color: $btnBackground;
+//       font-size: 15px;
+//       font-weight: bold;
+//       background-color: $primaryColor;
+//       margin-bottom: 1rem;
+//       border: none;
+//       border-radius: 10px;
+//       color: white;
+//       &:hover {
+//         color: white;
+//         background-color: rgba(2, 136, 123);
+//       }
+//     }
+//   }
+// }
+
+// .Card {
+//   display: flex;
+//   flex-direction: row;
+//   .option-select {
+//     display: flex;
+//     gap: 1rem;
+//     justify-content: flex-start;
+
+//     .last-select {
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .flight {
+//     .flight-card {
+//       margin-left: 3rem;
+//       margin-right: 2rem;
+//       .main-textarea-div {
+//         padding-left: 1rem;
+//         .second-textarea-div {
+//           .textarea-div {
+//             label {
+//               font-size: 15px;
+//             }
+//             .custom-select {
+//               width: 200px;
+//               &::placeholder {
+//                 color: grey;
+//                 font-size: 12px;
+//                 padding-left: 0.5rem;
+//               }
+//             }
+//             .input {
+//               width: 200px;
+//               margin-left: 0rem;
+//               &::placeholder {
+//                 color: grey;
+//                 font-size: 13px;
+//                 padding-left: 0.8rem;
+//               }
+//               &:focus {
+//                 border: none;
+//                 outline: none;
+//                 color: $textColor;
+
+//                 padding-left: 0rem;
+//               }
+//             }
+//             .date-inputs {
+//               width: 200px;
+//               &::placeholder {
+//                 color: grey;
+//                 font-size: 15px;
+//                 padding-left: 0.8rem;
+//               }
+//             }
+//             .passenger-box {
+//               margin-left: 1rem;
+//               margin-top: 5rem;
+//               .passenger-buttons {
+//                 font-size: 20px;
+//                 gap: 0.5rem;
+//                 button {
+//                   padding: 0.3rem 0.5rem;
+//                 }
+//                 span {
+//                   padding-right: 1rem;
+//                   padding-left: 1rem;
+//                   color: var(--iconColor);
+//                   font-size: 15px;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .bus-card {
+//   height: 250px;
+//   width: 400px;
+//   background-color: $formColor;
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+//   border-radius: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   margin: 1rem 3rem;
+//   justify-content: center;
+//   .second-textarea-div {
+//     display: flex;
+
+//     .textarea-div {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 0.5rem;
+
+//       label {
+//         padding-bottom: 0.2rem;
+//         font-size: 15px;
+//         font-weight: 400;
+//         color: $textColor;
+//       }
+
+//       .inputs {
+//         width: 100px;
+//         outline: none;
+//         box-shadow: none;
+//         &::placeholder {
+//           font-size: 15px;
+//         }
+//         &:focus {
+//           color: black;
+//         }
+//       }
+
+//       .date-inputs {
+//         width: 100px;
+//         border: none;
+//         padding: 0.7rem 0;
+//         border-radius: 3px;
+//         &::placeholder {
+//           font-size: 15px;
+//           padding: 2rem;
+//         }
+
+//         &:focus {
+//           outline: none;
+//           border: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 425px) {
+//   .flight {
+//     margin-top: 30rem;
+//     margin-left: 0;
+//     width: 100%;
+
+//     .flight-card {
+//       height: 800px;
+
+//       .main-textarea-div {
+//         margin-bottom: 0rem;
+//         gap: 2rem;
+//         .second-textarea-div {
+//           gap: 2rem;
+//           display: flex;
+//           flex-direction: column;
+//           .textarea-div {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             .custom-select {
+//               width: 200px;
+//             }
+//             .input {
+//               width: 200px;
+//             }
+//             .date-inputs {
+//               width: 200px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .flight {
+//   .option-select {
+//     z-index: 100;
+//     margin-top: -13rem;
+//     left: 50%;
+//   }
+// }

@@ -1,6 +1,5 @@
-import "./home.scss";
 import "../Cards/Flight/flight.scss";
-import Flight from "../Cards/Flight/Flight";
+import "./home.scss";
 
 import img1 from "../../assets/img1.jpg";
 import img2 from "../../assets/img2.jpg";
@@ -13,12 +12,13 @@ import img7 from "../../assets/img7.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import About from "../About/About";
-import Services from "../Services/Services";
 
 import "react-datepicker/dist/react-datepicker.css";
+import Flight from "../Cards/Flight/Flight";
+import About from "../About/About";
+import Services from "../Services/Services";
 import Popular from "../Popular/popular";
-import Footer from "../Footer/footer";
+import Footer from "../Footer/Footer";
 
 const ImageData = [
   {
@@ -89,19 +89,12 @@ const Home = () => {
           </h3>
           <h5>Your Gateway to Unforgettable Adventures!</h5>
         </div>
-
-        <div className="flight">
-          <Flight />
-        </div>
       </div>
-      <div className="about">
-        <About />
-      </div>
-      <div className="services">
-        <Services />
-      </div>
-      <Popular />
-      <Footer />
+      <Flight/>
+      <About/>
+      <Services/>
+      <Popular/>
+      <Footer/>
     </>
   );
 };

@@ -14,7 +14,7 @@ import { RiCopyrightFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer container">
       <div className="top-div">
         <div className="first-div">
           <img src={logo} alt="" />
@@ -22,9 +22,9 @@ const Footer = () => {
             Go Buddy Goo is a Nepal-based travel booking engine founded in 2021.
           </p>
           <div className="icon">
-            <AiFillFacebook className="ico" />
-            <RiInstagramFill className="ico" />
-            <IoLogoYoutube className="ico" />
+            <AiFillFacebook className="ico f" />
+            <RiInstagramFill className="ico i" />
+            <IoLogoYoutube className="ico y" />
           </div>
         </div>
         <div className="second-div">
@@ -61,7 +61,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <br />
+      <hr className="hr" />
       <div className="last-div">
         <p>
           {" "}

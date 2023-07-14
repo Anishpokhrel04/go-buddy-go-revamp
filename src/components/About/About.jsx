@@ -9,7 +9,7 @@ const About = () => {
     setIsHiddden(!isHidden);
   };
   return (
-    <div className="about">
+    <div className="about conatiner" id="about">
       <div className="secAbout">
         <div className="img-div">
           <img src={img5} alt="" className="imgs" />
@@ -38,20 +38,7 @@ const About = () => {
             best-suited choices according to their preferences and requirements.
             One of our key priorities at Go Buddy Goo is exceptional customer
             service. <br />
-            <br /> We are committed to delivering outstanding support to our
-            customers by offering real-time assistance throughout the booking
-            process. Our dedicated customer service team is readily available to
-            address any queries or concerns, ensuring that travelers receive
-            prompt and helpful responses. To further enhance the customer
-            experience, Go Buddy Goo provides immediate booking confirmations.
-            Upon completing a reservation, travelers receive instant
-            confirmation of their booking, giving them peace of mind and
-            eliminating any uncertainties. At Go Buddy Goo, we are passionate
-            about revolutionizing the travel booking industry in Nepal. <br />{" "}
-            <br /> With our user-friendly platform, extensive service options,
-            exceptional customer service, and immediate booking confirmations,
-            we strive to make the travel booking process convenient, reliable,
-            and stress-free for every traveler.
+            <br /> 
           </p>
           {isHidden && (
             <p>

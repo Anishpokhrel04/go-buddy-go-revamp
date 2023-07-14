@@ -1,12 +1,12 @@
 import "./login.scss";
 
 import logo from "../../assets/logo.png";
-import Footer from "../Footer/footer";
+import Footer from "../Footer/Footer";
 
 const Login = () => {
   return (
     <>
-      <div className="login">
+      <div className="login container" >
         <div className="login-card">
           <div className="img-div">
             <img src={logo} alt="" />
@@ -35,7 +35,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };
