@@ -102,7 +102,10 @@ const Flight = () => {
   }
 
   function handleValidation() {
-    if (!fromOption || !toOption || !departureDate) {
+    if (!fromOption || !toOption || !departureDate || !selectTripOption) {
+      setFormError(true);
+      return;
+    } else if (selectTripOption === "Two Way" && !returnDate) {
       setFormError(true);
       return;
     } else {
@@ -112,13 +115,10 @@ const Flight = () => {
   }
 
   function busHandleValidation() {
-    if (!fromOption || !toOption || !departureDate || !selectTripOption) {
+    if (!fromOption || !toOption || !departureDate ) {
       setFormError(true);
       return;
-    } else if (selectTripOption === "Two Way" && !returnDate) {
-      setFormError(true);
-      return;
-    } else {
+    }  else {
       setFormError(false);
       navigate("/bus");
     }

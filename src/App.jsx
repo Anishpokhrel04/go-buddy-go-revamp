@@ -8,6 +8,7 @@ import Flight from "./components/Cards/Flight/Flight";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Plane from "./components/API/plane/plane";
 import Bus from "./components/Cards/Bus/Bus";
+import Booking from "./components/API/plane/booking/Booking";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/plane" element={<Plane />} />
         <Route path="/bus" element={<Bus />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
     </Router>
   );

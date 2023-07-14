@@ -1,0 +1,231 @@
+$primaryColor: #009688;
+$primaryHover: rgba(2, 136, 123);
+$secondaryColor: rgb(150, 162, 188);
+$paragraphColor: rgb(127, 127, 175);
+$bgColor: rgb(0, 0, 0);
+$formColor: hsl(151.62deg 7.63% 84.82%);
+$projectCardColor: #072340;
+$textColor: black;
+$headerHeight: 3rem;
+$iconColor: #ffff;
+$btnBackground: #df912c;
+$btnHoverColor: #714c1c;
+
+.booking {
+  display: flex;
+  .passenger-details {
+    margin: 1rem;
+    padding: 2rem;
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: max-content;
+    h5 {
+      color: black;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .h-5 {
+      width: max-content;
+      .underline {
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: $primaryColor;
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
+          border-radius: 10px;
+          height: 100%;
+          position: absolute;
+          background-color: $iconColor;
+          animation: moveLine 2s linear infinite;
+
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
+
+            100% {
+              left: 100%;
+            }
+          }
+        }
+      }
+    }
+    .passenger-input {
+      width: 600px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(206, 202, 202);
+      margin-bottom: 20px;
+    }
+    .name-div {
+      display: flex;
+      gap: 1rem;
+      .title-div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .title-input {
+          height: 40px;
+          border: none;
+          border-radius: 5px;
+          background-color: rgb(247, 244, 244);
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .nationality {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .nation-input {
+        width: 400px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(247, 244, 244);
+        margin-bottom: 20px;
+      }
+    }
+    .contact-div {
+      display: flex;
+      gap: 1rem;
+
+      .contact-name {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .contact-input {
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(247, 244, 244);
+        margin-bottom: 20px;
+      }
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: $primaryColor;
+      color: $iconColor;
+      border: none;
+      margin-top: 1rem;
+      margin-left: 15rem;
+    }
+  }
+  .booking-details {
+    width: max-content;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 3rem;
+    margin: 1rem;
+    h5 {
+      color: black;
+      font-size: 15px;
+      font-weight: 400;
+      width: max-content;
+      margin-bottom: 20px;
+      .underline {
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: $primaryColor;
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
+          border-radius: 10px;
+          height: 100%;
+          position: absolute;
+          background-color: $iconColor;
+          animation: moveLine 2s linear infinite;
+
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
+
+            100% {
+              left: 100%;
+            }
+          }
+        }
+      }
+    }
+    .location-div {
+      display: flex;
+      gap: 6rem;
+      .form-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .img-div{
+        .date{
+          position: absolute;
+          margin-left: 1rem;
+          margin-top: -1.5rem;
+          font-size: 15px;
+          color: grey;
+          font-weight: 300;
+        }
+      }
+
+      .to-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .bill-div {
+      h4 {
+        margin-top: 20px;
+        background-color: $primaryColor;
+        padding: 0.5rem 0.5rem;
+        width: max-content;
+        border-radius: 5px 5px 0px 0px;
+        color: $iconColor;
+      }
+
+      .amount-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .particular {
+        background: rgb(152, 223, 245);
+        padding: 0.5rem;
+      }
+      .total {
+        background-color: rgb(241, 197, 204);
+        padding: 0.5rem;
+        color: $primaryColor;
+      }
+    }
+  }
+}

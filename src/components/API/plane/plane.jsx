@@ -6,6 +6,9 @@ import buddha from "../../../assets/buddha.png";
 import "./plane.scss";
 import { useState } from "react";
 
+import {useNavigate} from "react-router-dom"
+
+
 const PlaneData = [
   {
     id: 1,
@@ -128,13 +131,19 @@ const PlaneData = [
   },
 ];
 
+
 const Plane = () => {
+  const navigate = useNavigate();
   
   const [selectedFlight, setSelectedFlight] = useState(null);
 
   const handleSelectFlight = (flight) => {
     setSelectedFlight(flight);
   };
+
+  const bookingPage =()=>{
+    navigate("/booking")
+  }
   return (
     <div className="plane container">
       <div className="top-div">
@@ -161,7 +170,7 @@ const Plane = () => {
             <p>select a flight</p>
           )}
 
-          <button disabled={!selectedFlight}>Confirm Booking</button>
+          <button disabled={!selectedFlight} onClick={bookingPage}>Confirm Booking</button>
         </div>
       </div>
 
