@@ -8,9 +8,13 @@ import "./flights.scss";
 //importing icons
 import { BiSolidBusSchool, BiSolidPlaneTakeOff } from "react-icons/bi";
 import { MdHotel } from "react-icons/md";
+import { MyContext } from "../../context/Mycontext";
 
 const Flight = () => {
+
   const passengerBoxRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -36,8 +40,6 @@ const Flight = () => {
   const [selectedOption, setSelectedOption] = useState("flight");
   const [formError, setFormError] = useState(false);
   const [selectTripOption, setSelectTripOption] = useState();
-
-  const navigate = useNavigate();
 
   const optionList = [
     { value: "Kathmandu", label: "kathmandu" },
@@ -68,23 +70,31 @@ const Flight = () => {
   }
 
   function handleDepartureDate(date) {
-    if (returnDate && date > returnDate){
+    if (returnDate && date > returnDate) {
       setReturnDate(null);
     }
     setDepartureDate(date);
+    
+    
   }
 
   function handleReturnDate(date) {
     setReturnDate(date);
   }
-  function incrementAdultCount() {
+
+  //updated for context
+  function handleIncrementAdultCount() {
     setAdultCount((prevCount) => prevCount + 1);
+    // incrementAdultCount();
   }
 
-  function decrementAdultCount() {
+
+  // updated for context api
+  function handleDecrementAdultCount() {
     if (adultCount > 0) {
       setAdultCount((prevCount) => prevCount - 1);
     }
+    // decrementAdultCount();
   }
 
   function incrementChildCount() {
@@ -98,7 +108,7 @@ const Flight = () => {
   }
 
   function togglePassengerBox() {
-   setShowPassengerBox((prevShow) => !prevShow);
+    setShowPassengerBox((prevShow) => !prevShow);
   }
 
   function handleValidation() {
@@ -115,14 +125,14 @@ const Flight = () => {
   }
 
   function busHandleValidation() {
-    if (!fromOption || !toOption || !departureDate ) {
+    if (!fromOption || !toOption || !departureDate) {
       setFormError(true);
       return;
-    }  else {
+    } else {
       setFormError(false);
       navigate("/bus");
     }
-  }
+  } 
   const renderCard = () => {
     if (selectedOption === "flight") {
       return (
@@ -193,9 +203,9 @@ const Flight = () => {
                   {showPassengerBox && (
                     <div className="passenger-box">
                       <div className="passenger-buttons">
-                        <button onClick={decrementAdultCount}>-</button>
+                        <button onClick={handleDecrementAdultCount}>-</button>
                         <span>Adult</span>
-                        <button onClick={incrementAdultCount}>+</button>
+                        <button onClick={handleIncrementAdultCount}>+</button>
                       </div>
                       <div className="passenger-buttons">
                         <button onClick={decrementChildCount}>-</button>
@@ -244,7 +254,7 @@ const Flight = () => {
               </div>
             </div>
             <div className="btn">
-              <button onClick={handleValidation}>Search</button>
+              <button onClick={()=>handleValidation(selectTripOption)}>Search</button>
             </div>
           </div>
         </>
@@ -315,51 +325,55 @@ const Flight = () => {
     }
   };
   return (
-    <div className="main-card container">
-      <div className="Card">
-        <div className="option-select">
-          <p>
-            <Link
-              onClick={() => setSelectedOption("flight")}
-              className={selectedOption === "flight" ? "active" : ""}
-            >
-              <BiSolidPlaneTakeOff className="icon" />
-              Flight
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
-          <hr />
-          <p>
-            <Link
-              onClick={() => setSelectedOption("bus")}
-              className={selectedOption === "bus" ? "active" : ""}
-            >
-              <BiSolidBusSchool className="icon" />
-              Bus
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
-          <hr />
-          <p>
-            <Link
-              onClick={() => setSelectedOption("hotel")}
-              className={selectedOption === "hotel" ? "active" : ""}
-            >
-              <MdHotel className="icon" />
-              Hotel
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
+    <MyContext.Provider
+      value={{ toOption, fromOption, departureDate, selectedOption, adultCount,childCount }}
+    >
+      <div className="main-card container">
+        <div className="Card">
+          <div className="option-select">
+            <p>
+              <Link
+                onClick={() => setSelectedOption("flight")}
+                className={selectedOption === "flight" ? "active" : ""}
+              >
+                <BiSolidPlaneTakeOff className="icon" />
+                Flight
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+            <hr />
+            <p>
+              <Link
+                onClick={() => setSelectedOption("bus")}
+                className={selectedOption === "bus" ? "active" : ""}
+              >
+                <BiSolidBusSchool className="icon" />
+                Bus
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+            <hr />
+            <p>
+              <Link
+                onClick={() => setSelectedOption("hotel")}
+                className={selectedOption === "hotel" ? "active" : ""}
+              >
+                <MdHotel className="icon" />
+                Hotel
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+          </div>
+          {renderCard()}
         </div>
-        {renderCard()}
       </div>
-    </div>
+    </MyContext.Provider>
   );
 };
 

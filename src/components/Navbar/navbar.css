@@ -1,0 +1,195 @@
+.navbar {
+  background: #009688;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 1px 0px 10px 1px;
+}
+.navbar .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.navbar .header img {
+  height: 60px;
+  width: 100px;
+  cursor: pointer;
+}
+.navbar .header .navLists {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  justify-content: flex-end;
+}
+.navbar .header .navLists .nav-close-btn {
+  visibility: hidden;
+}
+.navbar .header .navLists .navItems {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.navbar .header .navLists .navItems .icon {
+  color: white;
+}
+.navbar .header .navLists .navItems .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  gap: 0.5rem;
+}
+.navbar .header .navLists .navItems .link:hover {
+  color: white;
+}
+.navbar .header .nav-btn {
+  font-size: 20px;
+  right: 1rem;
+  padding: 0.2rem 0.8rem;
+}
+.navbar .header .nav-btn .icon {
+  margin-top: 0.5rem;
+}
+.navbar .header .nav-btn:hover {
+  color: #009688;
+}
+.navbar .icons {
+  gap: 0.5rem;
+  font-size: 25px;
+  border: 2px solid #009688;
+  margin-right: 4rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: hsl(0, 0%, 87.55%);
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
+.navbar .icons h3 {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+}
+.navbar .icons h3:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header .navLists {
+    background: #009688;
+    position: absolute;
+    height: -moz-max-content;
+    height: max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    top: -100rem;
+    left: 80%;
+    transform: translate(-30%);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  .header .navLists .nav-close-btn {
+    position: absolute;
+    margin-left: 11rem;
+    margin-bottom: 18rem;
+    visibility: visible;
+  }
+  .header .navLists .navItems {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .header .navLists .navItems .icon {
+    color: white;
+  }
+  .header .navLists .navItems .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    gap: 0.5rem;
+  }
+  .header .navLists .navItems .link:hover {
+    color: white;
+  }
+  .header .dropdown {
+    top: 6rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  .header img {
+    padding-left: 0rem;
+  }
+  .header .navLists {
+    background: #009688;
+    position: absolute;
+    height: -moz-max-content;
+    height: max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 1rem;
+    top: -100rem;
+    left: 70%;
+    transform: translate(-30%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 100;
+  }
+  .header .navLists .nav-close-btn {
+    position: absolute;
+    margin-left: 11rem;
+    margin-bottom: 18rem;
+    visibility: visible;
+  }
+  .header .navLists .navItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .header .navLists .navItems .icon {
+    color: white;
+  }
+  .header .navLists .navItems .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    gap: 0.5rem;
+  }
+  .header .navLists .navItems .link:hover {
+    color: white;
+  }
+  .header .dropdown {
+    top: 6rem;
+  }
+  .header .iconss {
+    border: 1px solid white;
+  }
+}/*# sourceMappingURL=navbar.css.map */

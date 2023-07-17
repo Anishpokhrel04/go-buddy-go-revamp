@@ -238,16 +238,24 @@ $btnHoverColor: #714c1c;
 
               &:focus {
                 color: black;
+                border:none;
+                outline: none;
+                &::after{
+                  border: none;
+                  outline: none;
+                }
               }
             }
 
             .date-inputs {
               width: 290px;
               border: none;
-              height: 40px;
+              height: 38px;
               border-radius: 5px;
+              padding-left: 1rem;
               &::placeholder {
                 font-size: 15px;
+                padding-left: 1rem;
               }
               &:focus {
                 outline: none;

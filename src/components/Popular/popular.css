@@ -1,0 +1,163 @@
+.popular {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.popular h1 {
+  color: #009688;
+  font-size: bold;
+}
+.popular h1 .underline {
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 3px;
+  top: 5px;
+  position: relative;
+  border-radius: 10px;
+  background: rgb(150, 162, 188);
+  overflow: hidden;
+}
+.popular h1 .underline .underline,
+.popular h1 .underline span {
+  top: 0;
+  left: 10px;
+  width: 10px;
+  border-radius: 10px;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  animation: moveLine 2s linear infinite;
+}
+@keyframes moveLine {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.popular .icon-text {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.popular .icon-text .icon {
+  font-size: 35px;
+  border: none;
+  border-radius: 50px;
+  background-color: black;
+  margin-top: 12rem;
+}
+.popular .icon-text .icon:hover {
+  color: black;
+  background-color: #009688;
+}
+.popular .icon-text .popular-card {
+  height: 400px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.popular .icon-text .popular-card .img-div {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  border: 2px solid #009688;
+  position: absolute;
+}
+.popular .icon-text .popular-card .img-div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+.popular .icon-text .popular-card .img-div .text-div {
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  border: 2px solid #009688;
+  position: absolute;
+  border: none;
+}
+.popular .icon-text .popular-card .img-div .text-div:hover {
+  background-color: #032925;
+  color: white;
+}
+.popular .icon-text .icon {
+  font-size: 35px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 12rem;
+  background-color: #009688;
+}
+.popular .icon-text .icon:hover {
+  color: white;
+  background-color: #009688;
+}
+
+@media screen and (max-width: 768px) {
+  .popular {
+    margin-top: 2rem;
+  }
+  .popular h1 {
+    font-size: 25px;
+    margin-left: -4rem;
+  }
+  .popular .popular-card {
+    height: 300px;
+    width: 500px;
+  }
+  .popular .popular-card .img-div {
+    height: 100%;
+    width: 100%;
+  }
+  .popular .popular-card .text-div {
+    height: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .popular {
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .popular h1 {
+    font-size: 25px;
+  }
+  .popular .popular-card {
+    height: 20px;
+    width: 20px;
+  }
+  .popular .popular-card .img-div {
+    height: 100%;
+    width: 100%;
+  }
+  .popular .popular-card .text-div {
+    display: flex;
+    flex-direction: column;
+    height: 2px;
+    bottom: 0;
+  }
+}/*# sourceMappingURL=popular.css.map */

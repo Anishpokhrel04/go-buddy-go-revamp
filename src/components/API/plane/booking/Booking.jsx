@@ -1,8 +1,18 @@
 import "./booking.scss";
 
 import Footer from "../../../Footer/Footer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MyContext } from "../../../context/Mycontext";
+
 const Booking = () => {
+  var price = 5500;
+  var surcharge = 0;
+  var tax = price * 0.13;
+  function totalAmount() {
+    return price + surcharge + tax;
+  }
+  const { fromOption, toOption } = useContext(MyContext);
+
   const [showPage, setShowPage] = useState(true);
   const [remainingTime, setRemainingTime] = useState(10 * 60);
 
@@ -43,11 +53,19 @@ const Booking = () => {
                   <span></span>
                 </div>
               </h5>
-              <input className="passenger-input" type="text" />
+              <input
+                className="passenger-input"
+                type="text"
+                disabled
+                placeholder={`Total Passenger: ${fromOption}`}
+              />
               <div className="name-div">
                 <div className="title-div">
                   <label htmlFor="">Title</label>
-                  <input type="text" className="title-input" />
+                  <select className="title-input dropdown" placeholder="Select an option">
+                    <option value="option1">MRS</option>
+                    <option value="option2">MR</option>
+                  </select>
                 </div>
 
                 <div className="title-div">
@@ -63,7 +81,9 @@ const Booking = () => {
               <div className="nationality">
                 {" "}
                 <label htmlFor="">Nationality</label>
-                <input type="text" className="nation-input" />
+                <select className="nation-input">
+                  <option value="">Nepali</option>
+                </select>
               </div>
               <h5>Contact Details</h5>
               <div className="contact-div">
@@ -119,23 +139,23 @@ const Booking = () => {
                 </div>
 
                 <div className="amount-details">
-                  <p>Adult *1</p>
-                  <p>5500</p>
+                  <p>Adult  *1</p>
+                  <p>{price}</p>
                 </div>
 
                 <div className="amount-details">
                   <p>Surcharge</p>
-                  <p>0</p>
+                  <p>{surcharge}</p>
                 </div>
 
                 <div className="amount-details">
                   <p>Tax</p>
-                  <p>400</p>
+                  <p>{tax}</p>
                 </div>
 
                 <div className="amount-details total">
                   <p>Total</p>
-                  <p>6200</p>
+                  <p>{totalAmount()}</p>
                 </div>
               </div>
             </div>
