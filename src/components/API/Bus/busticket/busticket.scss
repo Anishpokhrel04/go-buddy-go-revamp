@@ -1,0 +1,206 @@
+$primaryColor: #009688;
+$primaryHover: rgba(2, 136, 123);
+$secondaryColor: rgb(150, 162, 188);
+$paragraphColor: rgb(127, 127, 175);
+$bgColor: rgb(0, 0, 0);
+$formColor: hsl(151.62deg 7.63% 84.82%);
+$projectCardColor: #072340;
+$textColor: black;
+$headerHeight: 3rem;
+$iconColor: #ffff;
+$btnBackground: #df912c;
+$btnHoverColor: #714c1c;
+
+.bus-ticket {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+
+  .passenger-div {
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 700px;
+    height: 450px;
+    h4 {
+      margin-bottom: 1rem;
+    }
+    .name-icon-div {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      .icon {
+        height: 50px;
+        width: 50px;
+        color: $primaryColor;
+      }
+
+      .full-name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+
+        label {
+          color: grey;
+          margin-left: 0.5rem;
+        }
+        input {
+          background-color: #eef0f1;
+          border: none;
+          height: 40px;
+          width: 300px;
+          border-radius: 10px;
+          :focus {
+            border: 1px solid blue;
+          }
+        }
+      }
+      .age {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: grey;
+          margin-left: 0.5rem;
+        }
+        input {
+          background-color: #eef0f1;
+          border: none;
+          height: 40px;
+          width: 200px;
+          border-radius: 10px;
+        }
+      }
+    }
+    .contact-details {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      .bording-point {
+        display: flex;
+        flex-direction: column;
+        label {
+          color: grey;
+          margin-left: 0.5rem;
+        }
+        select {
+          height: 40px;
+          width: 300px;
+          outline: none;
+          border: none;
+          background-color: #eef0f1;
+        }
+      }
+      .contact-name {
+        display: flex;
+        flex-direction: column;
+        label {
+          margin-left: 0.5rem;
+          color: grey;
+        }
+
+        input {
+          background-color: #eef0f1;
+          border: none;
+          height: 40px;
+          width: 300px;
+          border-radius: 10px;
+        }
+      }
+    }
+    .last-div {
+      display: flex;
+      gap: 2rem;
+      .contact {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          color: grey;
+          margin-left: 0.5rem;
+        }
+        input {
+          background-color: #eef0f1;
+          border: none;
+          height: 40px;
+          width: 300px;
+          border-radius: 10px;
+        }
+      }
+    }
+    .btn-div {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        color: white;
+        background-color: $primaryColor;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+    }
+  }
+  .ticket-div {
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 650px;
+    height: 700px;
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+    .date-div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .img-division {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      
+      img{
+        width: 450px;
+        height: 40px;
+      }
+    }
+
+    .location-div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0rem 4rem;
+      color: grey;
+      font-size: 12px;
+      margin-bottom: 3rem;
+    }
+    .bill-details{
+      margin-bottom: .5rem;
+      .bus-type{
+        display: flex;
+        justify-content: flex-start;
+       
+        gap: 12rem;
+        margin-bottom: .5rem;
+        
+        .p{
+          color: grey;
+          font-size: 14px;
+          display: flex;
+          justify-content: flex-start;
+        }
+
+      }
+    }
+  }
+}

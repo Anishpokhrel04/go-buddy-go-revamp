@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './bus.scss';
 
 import { BsCircleFill } from "react-icons/bs";
@@ -111,6 +112,11 @@ const BusData = [
 ];
 
 const Bus = () => {
+  const navigate= useNavigate();
+
+  function handleBooking (){
+    navigate("/busbooking")
+  }
   return (
     <div className="bus">
       {
@@ -186,7 +192,7 @@ const Bus = () => {
                   </div>
                   <div className="right-details">
                     <h3>NPR {item.price}</h3>
-                    <button>Book</button>
+                    <button onClick={handleBooking}>Book</button>
                   </div>
                 </div>
               </div>

@@ -8,11 +8,14 @@ import "./flights.scss";
 //importing icons
 import { BiSolidBusSchool, BiSolidPlaneTakeOff } from "react-icons/bi";
 import { MdHotel } from "react-icons/md";
-import { MyContext } from "../../context/Mycontext";
+
 
 const Flight = () => {
 
+ 
   const passengerBoxRef = useRef(null);
+
+ 
 
   const navigate = useNavigate();
 
@@ -40,6 +43,8 @@ const Flight = () => {
   const [selectedOption, setSelectedOption] = useState("flight");
   const [formError, setFormError] = useState(false);
   const [selectTripOption, setSelectTripOption] = useState();
+
+   
 
   const optionList = [
     { value: "Kathmandu", label: "kathmandu" },
@@ -74,8 +79,6 @@ const Flight = () => {
       setReturnDate(null);
     }
     setDepartureDate(date);
-    
-    
   }
 
   function handleReturnDate(date) {
@@ -87,7 +90,6 @@ const Flight = () => {
     setAdultCount((prevCount) => prevCount + 1);
     // incrementAdultCount();
   }
-
 
   // updated for context api
   function handleDecrementAdultCount() {
@@ -132,7 +134,7 @@ const Flight = () => {
       setFormError(false);
       navigate("/bus");
     }
-  } 
+  }
   const renderCard = () => {
     if (selectedOption === "flight") {
       return (
@@ -254,7 +256,9 @@ const Flight = () => {
               </div>
             </div>
             <div className="btn">
-              <button onClick={()=>handleValidation(selectTripOption)}>Search</button>
+              <button onClick={() => handleValidation(selectTripOption)}>
+                Search
+              </button>
             </div>
           </div>
         </>
@@ -325,55 +329,51 @@ const Flight = () => {
     }
   };
   return (
-    <MyContext.Provider
-      value={{ toOption, fromOption, departureDate, selectedOption, adultCount,childCount }}
-    >
-      <div className="main-card container">
-        <div className="Card">
-          <div className="option-select">
-            <p>
-              <Link
-                onClick={() => setSelectedOption("flight")}
-                className={selectedOption === "flight" ? "active" : ""}
-              >
-                <BiSolidPlaneTakeOff className="icon" />
-                Flight
-                <div className="underline">
-                  <span></span>
-                </div>
-              </Link>
-            </p>
-            <hr />
-            <p>
-              <Link
-                onClick={() => setSelectedOption("bus")}
-                className={selectedOption === "bus" ? "active" : ""}
-              >
-                <BiSolidBusSchool className="icon" />
-                Bus
-                <div className="underline">
-                  <span></span>
-                </div>
-              </Link>
-            </p>
-            <hr />
-            <p>
-              <Link
-                onClick={() => setSelectedOption("hotel")}
-                className={selectedOption === "hotel" ? "active" : ""}
-              >
-                <MdHotel className="icon" />
-                Hotel
-                <div className="underline">
-                  <span></span>
-                </div>
-              </Link>
-            </p>
-          </div>
-          {renderCard()}
+    <div className="main-card container">
+      <div className="Card">
+        <div className="option-select">
+          <p>
+            <Link
+              onClick={() => setSelectedOption("flight")}
+              className={selectedOption === "flight" ? "active" : ""}
+            >
+              <BiSolidPlaneTakeOff className="icon" />
+              Flight
+              <div className="underline">
+                <span></span>
+              </div>
+            </Link>
+          </p>
+          <hr />
+          <p>
+            <Link
+              onClick={() => setSelectedOption("bus")}
+              className={selectedOption === "bus" ? "active" : ""}
+            >
+              <BiSolidBusSchool className="icon" />
+              Bus
+              <div className="underline">
+                <span></span>
+              </div>
+            </Link>
+          </p>
+          <hr />
+          <p>
+            <Link
+              onClick={() => setSelectedOption("hotel")}
+              className={selectedOption === "hotel" ? "active" : ""}
+            >
+              <MdHotel className="icon" />
+              Hotel
+              <div className="underline">
+                <span></span>
+              </div>
+            </Link>
+          </p>
         </div>
+        {renderCard()}
       </div>
-    </MyContext.Provider>
+    </div>
   );
 };
 

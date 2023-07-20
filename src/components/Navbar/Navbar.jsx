@@ -1,10 +1,9 @@
 import "./navbar.scss";
-
+import { AiOutlineMenu } from "react-icons/ai";
 import { BiSolidBusSchool, BiSolidPlaneTakeOff } from "react-icons/bi";
 import { FaHome, FaTimes } from "react-icons/fa";
 import { MdHotel } from "react-icons/md";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { AiOutlineMenu } from "react-icons/ai";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -22,14 +21,14 @@ const Navbar = () => {
   return (
     <div className="navbar container">
       <div className="header">
-        <img src="" alt="" />
+        <p>LOGO</p>
 
         <ul onClick={closeNavbar} className={dropdown}>
           <button className=" nav-close-btn" onClick={closeNavbar}>
             <FaTimes />
           </button>
           <li className="navItems">
-            <Link to="/home" className="link">
+            <Link to="/home" className={`link `}>
               <FaHome className="icon" /> Home
             </Link>
           </li>

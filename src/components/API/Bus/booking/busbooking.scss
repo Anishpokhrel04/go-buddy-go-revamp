@@ -1,0 +1,192 @@
+$primaryColor: #009688;
+$primaryHover: rgba(2, 136, 123);
+$secondaryColor: rgb(150, 162, 188);
+$paragraphColor: rgb(127, 127, 175);
+$bgColor: rgb(0, 0, 0);
+$formColor: hsl(151.62deg 7.63% 84.82%);
+$projectCardColor: #072340;
+$textColor: black;
+$headerHeight: 3rem;
+$iconColor: #ffff;
+$btnBackground: #df912c;
+$btnHoverColor: #714c1c;
+
+.booking-div {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  margin-top: 5rem;
+
+  .first-div {
+    h3 {
+      margin-bottom: 1rem;
+    }
+    .seat-card {
+      h4 {
+        margin: 1rem;
+      }
+      margin-top: 1rem;
+      border-radius: 20px;
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+
+      .string-seat {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        .image-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .icon {
+            height: 40px;
+            width: 40px;
+          }
+          .selected {
+            color: $primaryColor;
+          }
+          .booked {
+            color: rgb(44, 44, 216);
+          }
+          p {
+            margin-top: 0.5rem;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .bus-card-details {
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      border-radius: 20px;
+
+      .icon-time {
+        margin-top: 1rem;
+        p {
+          color: grey;
+          margin-top: 1rem;
+        }
+        h1 {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+  .second-div {
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: 600px;
+    width: 500px;
+    border-radius: 20px;
+
+    .driver-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 1rem 2.5rem;
+      .driver-icon {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .seat-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      justify-content: space-between;
+      margin: 1rem 2.5rem;
+      .seat-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        .icon {
+          height: 50px;
+          width: 50px;
+        }
+        p {
+          color: grey;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .third-div {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .top-card {
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 300px;
+
+      h4 {
+        margin-bottom: 1rem;
+      }
+      .icon{
+        height: 50px;
+        width: 50px;
+        margin-bottom: 1rem;
+      }
+      .bus-card-text-div{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+      button{
+        color: $iconColor;
+        background-color: $primaryColor;
+        border: none;
+        padding: .5rem 2rem;
+      }
+    }
+    .bottom-card {
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+      height: 300px;
+      width: 300px;
+      h4 {
+        margin-bottom: 1rem;
+        padding: 1rem;
+      }
+
+      .icon-text {
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem;
+        align-items: center;
+
+        .icon {
+          height: 10px;
+          width: 10px;
+          color: $primaryColor;
+        }
+
+        p {
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+//css for seat
+
+.selected {
+  color: $primaryColor;
+}

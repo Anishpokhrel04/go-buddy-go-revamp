@@ -1,8 +1,9 @@
 import "./booking.scss";
 
 import Footer from "../../../Footer/Footer";
-import { useContext, useEffect, useState } from "react";
-import { MyContext } from "../../../context/Mycontext";
+import { useEffect, useState } from "react";
+
+
 
 const Booking = () => {
   var price = 5500;
@@ -11,7 +12,10 @@ const Booking = () => {
   function totalAmount() {
     return price + surcharge + tax;
   }
-  const { fromOption, toOption } = useContext(MyContext);
+
+  
+  
+ 
 
   const [showPage, setShowPage] = useState(true);
   const [remainingTime, setRemainingTime] = useState(10 * 60);
@@ -43,6 +47,7 @@ const Booking = () => {
       {showPage ? (
         <>
           <div className="timer">
+            
             <p>Time Remaining:{formatTime(remainingTime)}</p>
           </div>
           <div className="booking">
@@ -57,7 +62,8 @@ const Booking = () => {
                 className="passenger-input"
                 type="text"
                 disabled
-                placeholder={`Total Passenger: ${fromOption}`}
+                placeholder={`Total Passenger: `}
+               
               />
               <div className="name-div">
                 <div className="title-div">
