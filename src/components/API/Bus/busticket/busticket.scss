@@ -13,7 +13,8 @@ $btnHoverColor: #714c1c;
 
 .bus-ticket {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
   margin: 3rem;
 
   .passenger-div {
@@ -23,9 +24,42 @@ $btnHoverColor: #714c1c;
     flex-direction: column;
     border-radius: 10px;
     width: 700px;
-    height: 450px;
+    height: max-content;
     h4 {
       margin-bottom: 1rem;
+      .underline {
+        content: "";
+        left: 0;
+        width: 20%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: $primaryColor;
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
+          border-radius: 10px;
+          height: 100%;
+          position: absolute;
+          background-color: $iconColor;
+          animation: moveLine 2s linear infinite;
+
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
+
+            100% {
+              left: 100%;
+            }
+          }
+        }
+      }
     }
     .name-icon-div {
       display: flex;
@@ -53,6 +87,7 @@ $btnHoverColor: #714c1c;
           height: 40px;
           width: 300px;
           border-radius: 10px;
+          padding-left: 1rem;
           :focus {
             border: 1px solid blue;
           }
@@ -72,6 +107,7 @@ $btnHoverColor: #714c1c;
           height: 40px;
           width: 200px;
           border-radius: 10px;
+          padding-left: 1rem;
         }
       }
     }
@@ -92,6 +128,7 @@ $btnHoverColor: #714c1c;
           outline: none;
           border: none;
           background-color: #eef0f1;
+          padding-left: 1rem;
         }
       }
       .contact-name {
@@ -108,6 +145,7 @@ $btnHoverColor: #714c1c;
           height: 40px;
           width: 300px;
           border-radius: 10px;
+          padding-left: 1rem;
         }
       }
     }
@@ -128,6 +166,7 @@ $btnHoverColor: #714c1c;
           height: 40px;
           width: 300px;
           border-radius: 10px;
+          padding-left: 1rem;
         }
       }
     }
@@ -151,10 +190,43 @@ $btnHoverColor: #714c1c;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
     padding: 2rem;
     width: 650px;
-    height: 700px;
+    border-radius: 10px;
 
     h4 {
       margin-bottom: 0.5rem;
+      .underline {
+        content: "";
+        left: 0;
+        width: 20%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: $primaryColor;
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
+          border-radius: 10px;
+          height: 100%;
+          position: absolute;
+          background-color: $iconColor;
+          animation: moveLine 2s linear infinite;
+
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
+
+            100% {
+              left: 100%;
+            }
+          }
+        }
+      }
     }
     h2 {
       margin-bottom: 0.5rem;
@@ -168,8 +240,8 @@ $btnHoverColor: #714c1c;
       align-items: center;
       justify-content: center;
       margin-top: 2rem;
-      
-      img{
+
+      img {
         width: 450px;
         height: 40px;
       }
@@ -184,23 +256,98 @@ $btnHoverColor: #714c1c;
       font-size: 12px;
       margin-bottom: 3rem;
     }
-    .bill-details{
-      margin-bottom: .5rem;
-      .bus-type{
+    .bill-details {
+      margin-bottom: 0.5rem;
+      .bus-type {
         display: flex;
-        justify-content: flex-start;
-       
-        gap: 12rem;
-        margin-bottom: .5rem;
-        
-        .p{
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 0.5rem 5rem;
+
+        .p {
           color: grey;
           font-size: 14px;
-          display: flex;
-          justify-content: flex-start;
         }
+      }
+    }
+    .h-4 {
+      margin-top: 2rem;
+    }
+    .seat-num {
+      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      .seat-det{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        
+.icon {
+        color: $primaryColor;
+        height: 50px;
+        width: 50px;
+      }
+    }
+      }
 
+      
+
+    .price-div {
+      margin-top: 1rem;
+      .price {
+        font-weight: bold;
+        .underline {
+          content: "";
+          left: 0;
+          width: 20%;
+          height: 3px;
+          top: 5px;
+          position: relative;
+          border-radius: 10px;
+          background: $primaryColor;
+          overflow: hidden;
+
+          .underline,
+          span {
+            top: 0;
+            left: 10px;
+            width: 10px;
+            border-radius: 10px;
+            height: 100%;
+            position: absolute;
+            background-color: $iconColor;
+            animation: moveLine 2s linear infinite;
+
+            @keyframes moveLine {
+              0% {
+                left: -20px;
+              }
+
+              100% {
+                left: 100%;
+              }
+            }
+          }
+        }
+      }
+      .last {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-weight: 400;
+        background-color: rgb(152, 223, 245);
+        padding: 1rem;
+        border-radius: 10px;
       }
     }
   }
+}
+
+//css for error message
+.error-message{
+  margin-top: .5rem;
 }

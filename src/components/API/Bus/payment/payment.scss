@@ -1,0 +1,267 @@
+$primaryColor: #009688;
+$primaryHover: rgba(2, 136, 123);
+$secondaryColor: rgb(150, 162, 188);
+$paragraphColor: rgb(127, 127, 175);
+$bgColor: rgb(0, 0, 0);
+$formColor: hsl(151.62deg 7.63% 84.82%);
+$projectCardColor: #072340;
+$textColor: black;
+$headerHeight: 3rem;
+$iconColor: #ffff;
+$btnBackground: #df912c;
+$btnHoverColor: #714c1c;
+
+.payment {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 5rem 2rem;
+  
+  .payment-card {
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 700px;
+    gap: 1rem;
+    height: max-content;
+
+
+    h4 {
+      padding: 2rem;
+       .underline {
+          content: "";
+          left: 0;
+          width: 20%;
+          height: 3px;
+          top: 5px;
+          position: relative;
+          border-radius: 10px;
+          background: $primaryColor;
+          overflow: hidden;
+
+          .underline,
+          span {
+            top: 0;
+            left: 10px;
+            width: 10px;
+            border-radius: 10px;
+            height: 100%;
+            position: absolute;
+            background-color: $iconColor;
+            animation: moveLine 2s linear infinite;
+
+            @keyframes moveLine {
+              0% {
+                left: -20px;
+              }
+
+              100% {
+                left: 100%;
+              }
+            }
+          }
+        }
+    }
+    .notice{
+      margin-left: 3rem;
+      font-style: italic;
+      color: grey;
+    }
+    .ticket-amount-div {
+      margin: 3rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      .amount{
+        font-weight: bold;
+      }
+    }
+    .payment-img {
+      margin-top: 1rem;
+      display: flex;
+      margin-left: 3rem;
+      margin-bottom: 3rem;
+      gap: 5rem;
+      
+      img {
+        height: 60px;
+        width: 120px;
+      }
+    }
+    .btn-div {
+      display: flex;
+      padding-bottom: 2rem;
+      justify-content: flex-end;
+      padding-right: 2rem;
+
+      button {
+        padding: 0.5rem 2rem;
+        background-color: $primaryColor;
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  .passenger-details {
+    .ticket-div {
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      width: 600px;
+      border-radius: 10px;
+
+      h4 {
+        margin-bottom: 0.5rem;
+        .underline {
+          content: "";
+          left: 0;
+          width: 20%;
+          height: 3px;
+          top: 5px;
+          position: relative;
+          border-radius: 10px;
+          background: $primaryColor;
+          overflow: hidden;
+
+          .underline,
+          span {
+            top: 0;
+            left: 10px;
+            width: 10px;
+            border-radius: 10px;
+            height: 100%;
+            position: absolute;
+            background-color: $iconColor;
+            animation: moveLine 2s linear infinite;
+
+            @keyframes moveLine {
+              0% {
+                left: -20px;
+              }
+
+              100% {
+                left: 100%;
+              }
+            }
+          }
+        }
+      }
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      .date-div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .img-division {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+
+        img {
+          width: 450px;
+          height: 40px;
+        }
+      }
+
+      .location-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0rem 4rem;
+        color: grey;
+        font-size: 12px;
+        margin-bottom: 3rem;
+      }
+      .bill-details {
+        margin-bottom: 0.5rem;
+        .bus-type {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0.5rem 5rem;
+
+          .p {
+            color: grey;
+            font-size: 14px;
+            width: 30%;
+
+            text-align: justify;
+          }
+        }
+      }
+      .h-4 {
+        margin-top: 2rem;
+      }
+      .seat-num {
+        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        .seat-det {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+
+          .icon {
+            color: $primaryColor;
+            height: 50px;
+            width: 50px;
+          }
+        }
+      }
+
+      .price-div {
+        margin-top: 1rem;
+        .price {
+          font-weight: bold;
+          .underline {
+            content: "";
+            left: 0;
+            width: 20%;
+            height: 3px;
+            top: 5px;
+            position: relative;
+            border-radius: 10px;
+            background: $primaryColor;
+            overflow: hidden;
+
+            .underline,
+            span {
+              top: 0;
+              left: 10px;
+              width: 10px;
+              border-radius: 10px;
+              height: 100%;
+              position: absolute;
+              background-color: $iconColor;
+              animation: moveLine 2s linear infinite;
+
+              @keyframes moveLine {
+                0% {
+                  left: -20px;
+                }
+
+                100% {
+                  left: 100%;
+                }
+              }
+            }
+          }
+        }
+        .last {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 1rem;
+          font-weight: 400;
+          background-color: rgb(152, 223, 245);
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

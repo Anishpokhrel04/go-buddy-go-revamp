@@ -1,21 +1,87 @@
+import { useState } from "react";
 import "./busticket.scss";
 
 import { MdAirlineSeatReclineNormal } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 const BusTicket = () => {
+  const navigate = useNavigate();
+  const [formError, setFormError] = useState(false);
+  const [fullName, setFullName] = useState();
+  const [age, setAge] = useState();
+  const [contactName, setContactName] = useState();
+  const [contactNumber, setContactNumber] = useState();
+  const [contactEmail, setContactEmail] = useState();
+
+  function handleFullName(data) {
+    setFullName(data);
+  }
+
+  function handleAge(event) {
+    const data = event.target.value.replace(/\D/g, "");
+    if (data.length > 2) {
+      setFormError(true);
+    } else {
+      setAge(data);
+      setFormError(false);
+    }
+  }
+
+  function handleContactName(data) {
+    setContactName(data);
+  }
+
+  function handleContactNumber(data) {
+    setContactNumber(data);
+  }
+
+  function handleContactEmail(data) {
+    setContactEmail(data);
+  }
+
+  function handleValidation() {
+    if (!fullName || !age || !contactName || !contactNumber || !contactEmail) {
+      setFormError(true);
+      return;
+    } else {
+      navigate("/payment");
+      setFormError(false);
+    }
+  }
   return (
     <div className="bus-ticket">
       <div className="passenger-div">
-        <h4>Passenger Details</h4>
+        <h4>
+          Passenger Details
+          <div className="underline">
+            <span></span>
+          </div>
+        </h4>
+
         <div className="name-icon-div">
           <MdAirlineSeatReclineNormal className="icon" />
           <div className="full-name">
             <label htmlFor="">Full Name</label>
-            <input type="text" />
+            <input type="text" onChange={handleFullName} />
+            {formError && !fullName && (
+              <p className="error-message">Full name is required</p>
+            )}
           </div>
 
           <div className="age">
             <label htmlFor="">Age</label>
-            <input type="text" />
+            <input
+              type="number"
+              onChange={handleAge}
+              pattern="[0-9]*"
+              value={age}
+              maxLength="2"
+            />
+
+            {formError && age.length > 0 && (
+              <p className="error-message">
+                Age more than 99 yeras are not allowed
+              </p>
+            )}
           </div>
         </div>
 
@@ -31,32 +97,53 @@ const BusTicket = () => {
 
           <div className="contact-name">
             <label htmlFor="">Contact Name</label>
-            <input type="text" />
+            <input type="text" onChange={handleContactName} required />
+            {formError && !contactName && (
+              <p className="error-message"> Contact Name is required</p>
+            )}
           </div>
         </div>
 
         <div className="last-div">
           <div className="contact">
             <label htmlFor="">Contact Number</label>
-            <input type="number" />
+            <input type="number" onChange={handleContactNumber} required />
+            {formError && !contactNumber && (
+              <p className="error-message">Contact Number is required</p>
+            )}
           </div>
 
           <div className="contact">
             <label htmlFor="">Contact Email Address</label>
-            <input type="email" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleContactEmail}
+              required
+            />
+
+            {formError && !contactEmail && (
+              <p className="error-message">Email is required</p>
+            )}
           </div>
         </div>
         <div className="btn-div">
-          <button>Proceed to Payment</button>
+          <button onClick={handleValidation}>Proceed to Payment</button>
         </div>
       </div>
       <div className="ticket-div">
-        <h4>Your Booking Details</h4>
+        <h4>
+          Your Booking Details
+          <div className="underline">
+            <span></span>
+          </div>
+        </h4>
 
         <h2>Metro Deluxe</h2>
 
         <div className="date-div">
-          <p>jul 20, 2023</p>
+          <p>Jul 20, 2023</p>
           <p>Journey hour: 10 hr</p>
         </div>
         <div className="img-division">
@@ -92,11 +179,28 @@ const BusTicket = () => {
           </div>
         </div>
 
-        <h4>Selected Seats</h4>
-        <MdAirlineSeatReclineNormal className="icon" />
+        <h4 className="h-4">Selected Seats</h4>
+        <div className="seat-num">
+          <div className="seat-det">
+            <MdAirlineSeatReclineNormal className="icon" />
+
+            <p>A-1</p>
+          </div>
+
+          <div className="seat-det">
+            <MdAirlineSeatReclineNormal className="icon" />
+
+            <p>A-2</p>
+          </div>
+          <div className="seat-det">
+            <MdAirlineSeatReclineNormal className="icon" />
+
+            <p>A-3</p>
+          </div>
+        </div>
 
         <div className="price-div">
-          <p>Price Summary</p>
+          <p className="price">Price Summary</p>
           <div className="last">
             <p>Total(1 Setas)</p>
             <p>NPR 1555</p>

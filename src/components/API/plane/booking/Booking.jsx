@@ -3,8 +3,6 @@ import "./booking.scss";
 import Footer from "../../../Footer/Footer";
 import { useEffect, useState } from "react";
 
-
-
 const Booking = () => {
   var price = 5500;
   var surcharge = 0;
@@ -13,12 +11,43 @@ const Booking = () => {
     return price + surcharge + tax;
   }
 
-  
-  
- 
-
   const [showPage, setShowPage] = useState(true);
   const [remainingTime, setRemainingTime] = useState(10 * 60);
+  const [firstName, setFirstName] = useState();
+  const [lastName, setlastName] = useState();
+  const [contactName, setContactName] = useState();
+  const [contactNumber, setContactNumber] = useState();
+  const [contactEmail, setContactEmail] = useState();
+  const [formError, setFormError] = useState(false);
+
+  function handleFirstName(data) {
+    setFirstName(data);
+  }
+
+  function handleLastName(data) {
+    setlastName(data);
+  }
+
+  function handleContactName(data) {
+    setContactName(data);
+  }
+
+  function handleContactNumber(data) {
+    setContactNumber(data);
+  }
+
+  function handleContactEmail(data) {
+    setContactEmail(data);
+  }
+
+  function handleValidation() {
+    if (!contactName || !contactNumber || !contactEmail) {
+      setFormError(true);
+      return;
+    } else {
+      setFormError(false);
+    }
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,7 +76,6 @@ const Booking = () => {
       {showPage ? (
         <>
           <div className="timer">
-            
             <p>Time Remaining:{formatTime(remainingTime)}</p>
           </div>
           <div className="booking">
@@ -63,12 +91,14 @@ const Booking = () => {
                 type="text"
                 disabled
                 placeholder={`Total Passenger: `}
-               
               />
               <div className="name-div">
                 <div className="title-div">
                   <label htmlFor="">Title</label>
-                  <select className="title-input dropdown" placeholder="Select an option">
+                  <select
+                    className="title-input dropdown"
+                    placeholder="Select an option"
+                  >
                     <option value="option1">MRS</option>
                     <option value="option2">MR</option>
                   </select>
@@ -76,12 +106,26 @@ const Booking = () => {
 
                 <div className="title-div">
                   <label htmlFor="">First Name</label>
-                  <input type="text" className="title-input" />
+                  <input
+                    type="text"
+                    className="title-input"
+                    onChange={handleFirstName}
+                  />
+                  {formError && !firstName && (
+                    <p className="error-message">First Name is required</p>
+                  )}
                 </div>
 
                 <div className="title-div">
                   <label htmlFor="">Last Name</label>
-                  <input type="text" className="title-input" />
+                  <input
+                    type="text"
+                    className="title-input"
+                    onChange={handleLastName}
+                  />
+                  {formError && !lastName && (
+                    <p className="error-message">Last Name is required</p>
+                  )}
                 </div>
               </div>
               <div className="nationality">
@@ -95,21 +139,42 @@ const Booking = () => {
               <div className="contact-div">
                 <div className="contact-name">
                   <label htmlFor="Contact Name">Contact Name</label>
-                  <input type="text" className="contact-input" />
+                  <input
+                    type="text"
+                    className="contact-input"
+                    onChange={handleContactName}
+                  />
+                  {formError && !contactName && (
+                    <p className="error-message"> Contact Name is required</p>
+                  )}
                 </div>
 
                 <div className="contact-name">
                   <label htmlFor="Contact Name">Contact Number</label>
-                  <input type="text" className="contact-input" />
+                  <input
+                    type="text"
+                    className="contact-input"
+                    onChange={handleContactNumber}
+                  />
+                  {formError && !contactNumber && (
+                    <p className="error-message">Contact Number is required</p>
+                  )}
                 </div>
 
                 <div className="contact-name">
                   <label htmlFor="Contact Name">Contact Email</label>
-                  <input type="text" className="contact-input" />
+                  <input
+                    type="text"
+                    className="contact-input"
+                    onChange={handleContactEmail}
+                  />
+                  {formError && !contactEmail && (
+                    <p className="error-message">Email is required</p>
+                  )}
                 </div>
               </div>
 
-              <button>Proceed to Payment</button>
+              <button onClick={handleValidation}>Proceed to Payment</button>
             </div>
 
             <div className="booking-details">
@@ -145,7 +210,7 @@ const Booking = () => {
                 </div>
 
                 <div className="amount-details">
-                  <p>Adult  *1</p>
+                  <p>Adult *1</p>
                   <p>{price}</p>
                 </div>
 
