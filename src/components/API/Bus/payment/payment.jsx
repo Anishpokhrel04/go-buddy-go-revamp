@@ -27,8 +27,12 @@ const Payment = () => {
         <p className="notice">Please select any payment method</p>
 
         <div className="payment-img">
-          <img src={esewa} alt="" />
-          <img src={khalti} alt="" />
+          <div className="esewa">
+            <img src={esewa} alt="" />
+          </div>
+          <div className="khalti">
+            <img src={khalti} alt="" />
+          </div>
         </div>
         <div className="btn-div">
           <button>Confirm Booking</button>

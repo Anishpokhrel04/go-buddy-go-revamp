@@ -16,73 +16,97 @@ $btnHoverColor: #714c1c;
   justify-content: center;
   gap: 2rem;
   margin: 5rem 2rem;
-  
+
   .payment-card {
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
     width: 700px;
     gap: 1rem;
     height: max-content;
 
-
     h4 {
       padding: 2rem;
-       .underline {
-          content: "";
-          left: 0;
-          width: 20%;
-          height: 3px;
-          top: 5px;
-          position: relative;
+      .underline {
+        content: "";
+        left: 0;
+        width: 20%;
+        height: 3px;
+        top: 5px;
+        position: relative;
+        border-radius: 10px;
+        background: $primaryColor;
+        overflow: hidden;
+
+        .underline,
+        span {
+          top: 0;
+          left: 10px;
+          width: 10px;
           border-radius: 10px;
-          background: $primaryColor;
-          overflow: hidden;
+          height: 100%;
+          position: absolute;
+          background-color: $iconColor;
+          animation: moveLine 2s linear infinite;
 
-          .underline,
-          span {
-            top: 0;
-            left: 10px;
-            width: 10px;
-            border-radius: 10px;
-            height: 100%;
-            position: absolute;
-            background-color: $iconColor;
-            animation: moveLine 2s linear infinite;
+          @keyframes moveLine {
+            0% {
+              left: -20px;
+            }
 
-            @keyframes moveLine {
-              0% {
-                left: -20px;
-              }
-
-              100% {
-                left: 100%;
-              }
+            100% {
+              left: 100%;
             }
           }
         }
+      }
     }
-    .notice{
+    .notice {
       margin-left: 3rem;
+      margin-top: 2rem;
       font-style: italic;
       color: grey;
     }
     .ticket-amount-div {
-      margin: 3rem 3rem;
+      margin: 1rem 3rem;
       display: flex;
       justify-content: space-between;
-      .amount{
+      .amount {
         font-weight: bold;
       }
     }
+    
     .payment-img {
       margin-top: 1rem;
       display: flex;
       margin-left: 3rem;
       margin-bottom: 3rem;
       gap: 5rem;
-      
-      img {
-        height: 60px;
-        width: 120px;
+      padding: 1rem 0;
+
+      .esewa {
+        padding: 1rem;
+        &:hover {
+          padding: 1rem;
+          border: 1px solid $primaryColor;
+          border-radius: 10px;
+        }
+
+        img {
+          height: 60px;
+          width: 120px;
+        }
+      }
+      .khalti {
+        padding: 1rem;
+        &:hover {
+          padding: 1rem;
+          border: 1px solid $primaryColor;
+          border-radius: 10px;
+        }
+
+        img {
+          height: 60px;
+          width: 120px;
+        }
       }
     }
     .btn-div {

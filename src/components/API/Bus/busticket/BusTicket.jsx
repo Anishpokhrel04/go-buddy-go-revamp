@@ -12,14 +12,14 @@ const BusTicket = () => {
   const [contactNumber, setContactNumber] = useState();
   const [contactEmail, setContactEmail] = useState();
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function handleFullName(data) {
     setFullName(data);
   }
 
   function handleAge(data) {
-   setAge(data);
+    setAge(data);
   }
 
   function handleContactName(data) {
@@ -27,7 +27,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   }
 
   function handleContactNumber(data) {
-    setContactNumber(data);
+    setContactNumber(data.target.value);
   }
 
   function handleContactEmail(data) {
@@ -71,7 +71,17 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           <div className="age">
             <label htmlFor="">Age</label>
-            <input type="number" onChange={handleAge} maxLength="2" />
+            <input
+              type="number"
+              onChange={handleAge}
+              max={2}
+              onKeyPress={(e) => {
+                const onlyNumeric = /^[0-9]*$/;
+                if (!onlyNumeric.test(e.key)|| age.length>=2) {
+                  e.preventDefault();
+                }
+              }}
+            />
 
             {formError && !age && (
               <p className="error-message">Age is required</p>
@@ -101,10 +111,22 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         <div className="last-div">
           <div className="contact">
             <label htmlFor="">Contact Number</label>
-            <input type="number" onChange={handleContactNumber} required />
-            {formError &&
-              !contactNumber &&
-              !(<p className="error-message">Contact Number is required</p>)}
+            <input
+              type="number"
+              onChange={handleContactNumber}
+              onKeyPress={(e) => {
+                const onlyNumeric = /^[0-9]*$/;
+                if (!onlyNumeric.test(e.key)) {
+                  e.preventDefault();
+                }
+              }}
+              required
+            />
+            {formError && !contactNumber && (
+              <p className="error-message">
+                please enter 10 digit valid number
+              </p>
+            )}
           </div>
 
           <div className="contact">
