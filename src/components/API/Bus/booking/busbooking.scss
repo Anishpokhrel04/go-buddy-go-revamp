@@ -15,14 +15,12 @@ $btnHoverColor: #714c1c;
   display: flex;
   justify-content: center;
   gap: 5rem;
-  align-items: center;
-  margin-top: 5rem;
   margin: 2rem;
 
   .first-div {
     h3 {
       margin-bottom: 1rem;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
     .seat-card {
       h4 {
@@ -91,8 +89,7 @@ $btnHoverColor: #714c1c;
 
     .driver-div {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-end;
       margin: 1rem 2.5rem;
       .driver-icon {
         height: 50px;
@@ -116,6 +113,7 @@ $btnHoverColor: #714c1c;
         .icon {
           height: 50px;
           width: 50px;
+          cursor: pointer;
         }
         p {
           color: grey;
@@ -139,22 +137,56 @@ $btnHoverColor: #714c1c;
       h4 {
         margin-bottom: 1rem;
       }
-      .icon{
-        height: 50px;
-        width: 50px;
-        margin-bottom: 1rem;
+      .selected-seat {
+        display: inline-block;
+        padding-left: .5rem;
+        .selected-seat-item {
+          display: flex;
+          .bus-card-text-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            .icon {
+              height: 50px;
+              width: 50px;
+              margin-bottom: 0.5rem;
+              cursor: pointer;
+            }
+            p{
+              font-size: 12px;
+            }
+          }
+        }
       }
-      .bus-card-text-div{
+
+      .total-price{
+        margin-top: 1rem;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 1rem;
+        
+
       }
-      button{
+      .btn{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 1rem;
+        width: 100%;
+       
+          button {
         color: $iconColor;
         background-color: $primaryColor;
         border: none;
-        padding: .5rem 2rem;
+        width: 100%;
+        padding: 1rem 0;
+        cursor: pointer;
+        border-radius: 10px;
+        
       }
+      }
+
+    
     }
     .bottom-card {
       box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05),

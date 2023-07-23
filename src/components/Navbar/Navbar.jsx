@@ -47,7 +47,10 @@ const Navbar = () => {
           </li>
 
           <li className="navItems">
-            <Link to="/about" className="link">
+            <Link
+              to="https://www.booking.com/index.html?aid=2305933"
+              className="link"
+            >
               <MdHotel className="icon" /> Hotel
             </Link>
           </li>

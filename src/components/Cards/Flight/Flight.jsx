@@ -325,7 +325,14 @@ const Flight = () => {
         </div>
       );
     } else if (selectedOption === "hotel") {
-      return <div className="hotel-card">this is hotel</div>;
+      return (
+        <div className="hotel-card">
+          <a href="https://www.booking.com/index.html?aid=2305933">
+            {" "}
+            Click here to select Hotel
+          </a>
+        </div>
+      );
     }
   };
   return (

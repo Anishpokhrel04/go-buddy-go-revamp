@@ -13,6 +13,7 @@ const seatData = [
     icon: MdAirlineSeatReclineNormal,
     seatNumber: "A-1",
     isSelected: false,
+    price: 1500,
   },
 
   {
@@ -20,6 +21,7 @@ const seatData = [
     icon: MdAirlineSeatReclineNormal,
     seatNumber: "A-1",
     isSelected: false,
+    price: 1500,
   },
 
   {
@@ -27,6 +29,7 @@ const seatData = [
     icon: MdAirlineSeatReclineNormal,
     seatNumber: "A-1",
     isSelected: false,
+    price: 1500,
   },
 
   {
@@ -34,6 +37,7 @@ const seatData = [
     icon: MdAirlineSeatReclineNormal,
     seatNumber: "A-1",
     isSelected: false,
+    price: 1500,
   },
 
   {
@@ -41,36 +45,40 @@ const seatData = [
     icon: MdAirlineSeatReclineNormal,
     seatNumber: "A-1",
     isSelected: false,
+    price: 1500,
   },
 ];
 
 const BusBooking = () => {
-  const navigate= useNavigate();
-  // const [seatDataState, setSeatDataState] = useState(seatData);
+  const navigate = useNavigate();
 
-  // const handleSeatClick = (id) => {
-  //   console.log("you have clicked");
-  //   setSeatDataState((prevSeatData) =>
-  //     prevSeatData.map((item) =>
-  //       item.id === id ? { ...item, isSelected: !item.isSelected } : item
-  //     )
-  //   );
-  // };
-  const [selectedSeat, setSelectedSeat]= useState(null);
+  const [selectedSeats, setSelectedSeats] = useState([]);
 
+  const clickNavigate = () => {
+    navigate("/busticket");
+  };
 
- 
-const clickNavigate=()=>{
-  navigate('/busticket')
-}
+  //code for selectiong mulltiple icons
+  const handleSeatClicked = (id) => {
+    if (selectedSeats.includes(id)) {
+      setSelectedSeats((prevSelectedSeats) =>
+        prevSelectedSeats.filter((seatId) => seatId !== id)
+      );
+    } else {
+      setSelectedSeats((prevSelectedSeats) => [...prevSelectedSeats, id]);
+    }
+  };
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    selectedSeats.forEach((seatId) => {
+      const selectedSeat = seatData.find((seat) => seat.id === seatId);
+      if (selectedSeat) {
+        totalPrice += selectedSeat.price;
+      }
+    });
+    return totalPrice;
+  };
 
-const handleSeatClicked = (id) => {
-  setSelectedSeat((pervSelectedSeat)=>
-  pervSelectedSeat===id? null:id)
-  setSelectedSeat(id);
-};
-
-  
   return (
     <>
       <div className="booking-div">
@@ -114,7 +122,6 @@ const handleSeatClicked = (id) => {
         </div>
         <div className="second-div">
           <div className="driver-div">
-            <MdAirlineSeatReclineNormal className="driver-icon" />
             <PiSteeringWheelLight className="driver-icon" />
           </div>
 
@@ -123,35 +130,17 @@ const handleSeatClicked = (id) => {
               return (
                 <>
                   <div
-                    // className={`seat-name ${item.isSelected ? "selected" : ""}`}
-                    // onClick={() => handleSeatClick(item.id)}
                     className={`seat-name ${
-                      selectedSeat === item.id ? "selected" : ""
+                      selectedSeats.includes(item.id) ? "selected" : ""
                     }`}
                     onClick={() => {
                       handleSeatClicked(item.id);
                     }}
-                    key="item.id"
+                    key={item.id}
                   >
                     <item.icon className="icon" />
                     <p>{item.seatNumber}</p>
                   </div>
-
-                  {/* <div className="seat-name">
-                      <item.icon className="icon" /> <p>{item.seatNumber}</p>
-                    </div>
-
-                    <div className="seat-name">
-                      <item.icon className="icon" /> <p>{item.seatNumber}</p>
-                    </div>
-
-                    <div className="seat-name">
-                      <item.icon className="icon" /> <p>{item.seatNumber}</p>
-                    </div>
-
-                    <div className="seat-name">
-                      <item.icon className="icon" /> <p>{item.seatNumber}</p>
-                    </div> */}
                 </>
               );
             })}
@@ -160,19 +149,38 @@ const handleSeatClicked = (id) => {
         <div className="third-div">
           <div className="top-card">
             <h4>Selected Seat</h4>
-            {selectedSeat ? (
+            {selectedSeats.length > 0 ? (
               <>
-                <MdAirlineSeatReclineNormal className="icon selected" />
-                <div className="bus-card-text-div">
-                  <p>Total Seat(1 Seat)</p>
-                  <p>NPR 1500</p>
+                {/* Display selected seats and total price */}
+                {selectedSeats.map((seatId) => {
+                  const selectedSeat = seatData.find(
+                    (seat) => seat.id === seatId
+                  );
+                  return (
+                    <div key={seatId} className="selected-seat">
+                      <div className="selected-seat-item">
+                        <div className="bus-card-text-div">
+                          <selectedSeat.icon className="icon selected" />
+                          <p>{selectedSeat.seatNumber}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="total-price">
+                  <p>Total Seat({selectedSeats.length} Seat)</p>
+                  <p>NPR {calculateTotalPrice()}</p>
                 </div>
-                <button onClick={clickNavigate}>Confirm</button>
+                <div className="btn">
+                  {" "}
+                  <button onClick={clickNavigate}>Confirm</button>
+                </div>
               </>
             ) : (
-              <p> Please select a seat first</p>
+              <p>Please select a seat first</p>
             )}
           </div>
+
           <div className="bottom-card">
             <h4>Aminities</h4>
             <div className="icon-text">

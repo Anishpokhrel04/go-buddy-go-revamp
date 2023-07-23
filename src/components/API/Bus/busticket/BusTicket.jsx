@@ -12,18 +12,14 @@ const BusTicket = () => {
   const [contactNumber, setContactNumber] = useState();
   const [contactEmail, setContactEmail] = useState();
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   function handleFullName(data) {
     setFullName(data);
   }
 
-  function handleAge(event) {
-    const data = event.target.value.replace(/\D/g, "");
-    if (data.length > 2) {
-      setFormError(true);
-    } else {
-      setAge(data);
-      setFormError(false);
-    }
+  function handleAge(data) {
+   setAge(data);
   }
 
   function handleContactName(data) {
@@ -39,7 +35,13 @@ const BusTicket = () => {
   }
 
   function handleValidation() {
-    if (!fullName || !age || !contactName || !contactNumber || !contactEmail) {
+    if (
+      !fullName ||
+      !age ||
+      !contactName ||
+      !contactNumber ||
+      !emailRegex.test(contactEmail)
+    ) {
       setFormError(true);
       return;
     } else {
@@ -69,18 +71,10 @@ const BusTicket = () => {
 
           <div className="age">
             <label htmlFor="">Age</label>
-            <input
-              type="number"
-              onChange={handleAge}
-              pattern="[0-9]*"
-              value={age}
-              maxLength="2"
-            />
+            <input type="number" onChange={handleAge} maxLength="2" />
 
-            {formError && age.length > 0 && (
-              <p className="error-message">
-                Age more than 99 yeras are not allowed
-              </p>
+            {formError && !age && (
+              <p className="error-message">Age is required</p>
             )}
           </div>
         </div>
@@ -108,9 +102,9 @@ const BusTicket = () => {
           <div className="contact">
             <label htmlFor="">Contact Number</label>
             <input type="number" onChange={handleContactNumber} required />
-            {formError && !contactNumber && (
-              <p className="error-message">Contact Number is required</p>
-            )}
+            {formError &&
+              !contactNumber &&
+              !(<p className="error-message">Contact Number is required</p>)}
           </div>
 
           <div className="contact">
@@ -119,12 +113,15 @@ const BusTicket = () => {
               type="email"
               name="email"
               id="email"
-              onChange={handleContactEmail}
+              onChange={(e) => handleContactEmail(e.target.value)}
               required
             />
 
             {formError && !contactEmail && (
               <p className="error-message">Email is required</p>
+            )}
+            {formError && contactEmail && !emailRegex.test(contactEmail) && (
+              <p className="error-message">Invalid email format</p>
             )}
           </div>
         </div>
