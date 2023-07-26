@@ -9,14 +9,8 @@ import "./flights.scss";
 import { BiSolidBusSchool, BiSolidPlaneTakeOff } from "react-icons/bi";
 import { MdHotel } from "react-icons/md";
 
-
 const Flight = () => {
-
- 
   const passengerBoxRef = useRef(null);
-
- 
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,18 +27,16 @@ const Flight = () => {
       window.removeEventListener("click", handleClickOutside);
     };
   }, []);
-  const [fromOption, setFromOption] = useState();
-  const [toOption, setToOption] = useState();
-  const [departureDate, setDepartureDate] = useState(null);
-  const [returnDate, setReturnDate] = useState(null);
-  const [adultCount, setAdultCount] = useState(1);
-  const [childCount, setChildCount] = useState(0);
-  const [showPassengerBox, setShowPassengerBox] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("flight");
-  const [formError, setFormError] = useState(false);
-  const [selectTripOption, setSelectTripOption] = useState();
-
-   
+  // const [fromOption, setFromOption] = useState();
+  // const [toOption, setToOption] = useState();
+  // const [departureDate, setDepartureDate] = useState(null);
+  // const [returnDate, setReturnDate] = useState(null);
+  // const [adultCount, setAdultCount] = useState(1);
+  // const [childCount, setChildCount] = useState(0);
+  // const [showPassengerBox, setShowPassengerBox] = useState(false);
+  // const [selectedOption, setSelectedOption] = useState("flight");
+  // const [formError, setFormError] = useState(false);
+  // const [selectTripOption, setSelectTripOption] = useState();
 
   const optionList = [
     { value: "Kathmandu", label: "kathmandu" },
@@ -66,72 +58,182 @@ const Flight = () => {
     },
   ];
 
+  // function handleFromSelect(data) {
+  //   setFromOption(data);
+  // }
+
+  // function handleToSelect(data) {
+  //   setToOption(data);
+  // }
+
+  // function handleDepartureDate(date) {
+  //   if (returnDate && date > returnDate) {
+  //     setReturnDate(null);
+  //   }
+  //   setDepartureDate(date);
+  // }
+
+  // function handleReturnDate(date) {
+  //   setReturnDate(date);
+  // }
+
+  // //updated for context
+  // function handleIncrementAdultCount() {
+  //   setAdultCount((prevCount) => prevCount + 1);
+  //   // incrementAdultCount();
+  // }
+
+  // // updated for context api
+  // function handleDecrementAdultCount() {
+  //   if (adultCount > 0) {
+  //     setAdultCount((prevCount) => prevCount - 1);
+  //   }
+  //   // decrementAdultCount();
+  // }
+
+  // function incrementChildCount() {
+  //   setChildCount((prevCount) => prevCount + 1);
+  // }
+
+  // function decrementChildCount() {
+  //   if (childCount > 0) {
+  //     setChildCount((prevCount) => prevCount - 1);
+  //   }
+  // }
+
+  // function togglePassengerBox() {
+  //   setShowPassengerBox((prevShow) => !prevShow);
+  // }
+
+  // function handleValidation() {
+  //   if (!fromOption || !toOption || !departureDate || !selectTripOption) {
+  //     setFormError(true);
+  //     return;
+  //   } else if (selectTripOption === "Two Way" && !returnDate) {
+  //     setFormError(true);
+  //     return;
+  //   } else {
+  //     setFormError(false);
+  //     navigate("/plane");
+  //   }
+  // }
+
+  // function busHandleValidation() {
+  //   if (!fromOption || !toOption || !departureDate) {
+  //     setFormError(true);
+  //     return;
+  //   } else {
+  //     setFormError(false);
+  //     navigate("/bus");
+  //   }
+  // }
+
+  const [formData, setFormData] = useState({
+    fromOption: "",
+    toOption: "",
+    departureDate: null,
+    returnDate: null,
+    adultCount: 1,
+    childCount: 0,
+    showPassengerBox: false,
+    selectedOption: "flight",
+    formError: false,
+    selectTripOption: "",
+  });
+
+  const {
+    fromOption,
+    toOption,
+    departureDate,
+    returnDate,
+    adultCount,
+    childCount,
+    showPassengerBox,
+    selectedOption,
+    formError,
+    selectTripOption,
+  } = formData;
+
   function handleFromSelect(data) {
-    setFromOption(data);
+    setFormData({ ...formData, fromOption: data });
   }
 
   function handleToSelect(data) {
-    setToOption(data);
+    setFormData({ ...formData, toOption: data });
   }
 
   function handleDepartureDate(date) {
     if (returnDate && date > returnDate) {
-      setReturnDate(null);
+      setFormData({ ...formData, departureDate: date, returnDate: null });
+    } else {
+      setFormData({ ...formData, departureDate: date });
     }
-    setDepartureDate(date);
   }
 
   function handleReturnDate(date) {
-    setReturnDate(date);
+    setFormData({ ...formData, returnDate: date });
   }
 
-  //updated for context
   function handleIncrementAdultCount() {
-    setAdultCount((prevCount) => prevCount + 1);
-    // incrementAdultCount();
+    setFormData((prevState) => ({
+      ...prevState,
+      adultCount: prevState.adultCount + 1,
+    }));
   }
 
-  // updated for context api
   function handleDecrementAdultCount() {
     if (adultCount > 0) {
-      setAdultCount((prevCount) => prevCount - 1);
+      setFormData((prevState) => ({
+        ...prevState,
+        adultCount: prevState.adultCount - 1,
+      }));
     }
-    // decrementAdultCount();
   }
 
   function incrementChildCount() {
-    setChildCount((prevCount) => prevCount + 1);
+    setFormData((prevState) => ({
+      ...prevState,
+      childCount: prevState.childCount + 1,
+    }));
   }
 
   function decrementChildCount() {
     if (childCount > 0) {
-      setChildCount((prevCount) => prevCount - 1);
+      setFormData((prevState) => ({
+        ...prevState,
+        childCount: prevState.childCount - 1,
+      }));
     }
   }
 
   function togglePassengerBox() {
-    setShowPassengerBox((prevShow) => !prevShow);
+    setFormData((prevState) => ({
+      ...prevState,
+      showPassengerBox: !prevState.showPassengerBox,
+    }));
   }
 
   function handleValidation() {
     if (!fromOption || !toOption || !departureDate || !selectTripOption) {
-      setFormError(true);
+      setFormData({ ...formData, formError: true });
       return;
     } else if (selectTripOption === "Two Way" && !returnDate) {
-      setFormError(true);
+      setFormData({ ...formData, formError: true });
       return;
     } else {
-      setFormError(false);
+      setFormData({ ...formData, formError: false });
+      localStorage.setItem("plane", JSON.stringify(formData));
       navigate("/plane");
     }
   }
 
   function busHandleValidation() {
     if (!fromOption || !toOption || !departureDate) {
-      setFormError(true);
+      setFormData({ ...formData, formError: true });
       return;
     } else {
-      setFormError(false);
+      setFormData({ ...formData, formError: false });
+      localStorage.setItem("bus", JSON.stringify(formData));
       navigate("/bus");
     }
   }
@@ -184,7 +286,9 @@ const Flight = () => {
                     }`}
                     options={optionWayList}
                     value={selectTripOption}
-                    onChange={(option) => setSelectTripOption(option)}
+                    onChange={(option) =>
+                      setFormData({ ...formData, selectTripOption: option })
+                    }
                   ></Select>
                   {formError && !selectTripOption && (
                     <p className="error-message">Trip is required</p>
@@ -248,7 +352,7 @@ const Flight = () => {
                     minDate={departureDate}
                   />
                   {formError &&
-                    selectTripOption?.value == "Two Way" &&
+                    String(selectTripOption?.value) === "Two Way" &&
                     !returnDate && (
                       <p className="error-message">Return date is required</p>
                     )}
@@ -318,7 +422,7 @@ const Flight = () => {
             </div>
           </div>
           <div className="bus-btn">
-            <button className="bus-button" onClick={busHandleValidation}>
+            <button className="bus-button" onClick={()=>busHandleValidation(selectTripOption)}>
               Search
             </button>
           </div>
@@ -336,51 +440,59 @@ const Flight = () => {
     }
   };
   return (
-    <div className="main-card container">
-      <div className="Card">
-        <div className="option-select">
-          <p>
-            <Link
-              onClick={() => setSelectedOption("flight")}
-              className={selectedOption === "flight" ? "active" : ""}
-            >
-              <BiSolidPlaneTakeOff className="icon" />
-              Flight
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
-          <hr />
-          <p>
-            <Link
-              onClick={() => setSelectedOption("bus")}
-              className={selectedOption === "bus" ? "active" : ""}
-            >
-              <BiSolidBusSchool className="icon" />
-              Bus
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
-          <hr />
-          <p>
-            <Link
-              onClick={() => setSelectedOption("hotel")}
-              className={selectedOption === "hotel" ? "active" : ""}
-            >
-              <MdHotel className="icon" />
-              Hotel
-              <div className="underline">
-                <span></span>
-              </div>
-            </Link>
-          </p>
+    <>
+      <div className="main-card container">
+        <div className="Card">
+          <div className="option-select">
+            <p>
+              <Link
+                onClick={() =>
+                  setFormData({ ...formData, selectedOption: "flight" })
+                }
+                className={selectedOption === "flight" ? "active" : ""}
+              >
+                <BiSolidPlaneTakeOff className="icon" />
+                Flight
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+            <hr />
+            <p>
+              <Link
+                onClick={() =>
+                  setFormData({ ...formData, selectedOption: "bus" })
+                }
+                className={selectedOption === "bus" ? "active" : ""}
+              >
+                <BiSolidBusSchool className="icon" />
+                Bus
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+            <hr />
+            <p>
+              <Link
+                onClick={() =>
+                  setFormData({ ...formData, selectedOption: "hotel" })
+                }
+                className={selectedOption === "hotel" ? "active" : ""}
+              >
+                <MdHotel className="icon" />
+                Hotel
+                <div className="underline">
+                  <span></span>
+                </div>
+              </Link>
+            </p>
+          </div>
+          {renderCard()}
         </div>
-        {renderCard()}
       </div>
-    </div>
+    </>
   );
 };
 

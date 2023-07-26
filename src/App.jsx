@@ -9,25 +9,29 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Plane from "./components/API/plane/plane";
 import Booking from "./components/API/plane/booking/Booking";
 import BusBooking from "./components/API/Bus/booking/BusBooking";
-import BusTicket from "./components/API/Bus/busticket/BusTicket";
-import Payment from "./components/API/Bus/payment/payment";
+import BusTicket from "./components/API/Bus/booking/busticket/BusTicket";
+import Payment from "./components/API/Bus/booking/busticket/payment/payment";
+import PlaneTicket from "./components/API/plane/booking/PlaneTicket/PlaneTicket";
 function App() {
   return (
-    <Router>
-      <Navbar />
+    
+      <Router>
+        <Navbar />
 
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/flight" element={<Flight />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/plane" element={<Plane />} />
-        <Route path="/bus" element={<Bus />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/busbooking" element={<BusBooking />} />
-        <Route path="/busticket" element={<BusTicket />} />
-        <Route path="/payment" element={<Payment />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/flight" element={<Flight />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/plane" element={<Plane />} />
+          <Route path="/bus" element={<Bus />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/busbooking" element={<BusBooking />} />
+          <Route path="/busticket" element={<BusTicket />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/planeticket" element={<PlaneTicket/>} />
+        </Routes>
+      </Router>
+    
   );
 }
 

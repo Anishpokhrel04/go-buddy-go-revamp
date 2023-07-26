@@ -4,132 +4,142 @@ import { BiSolidCircle } from "react-icons/bi";
 
 import buddha from "../../../assets/buddha.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PlaneData = [
-  {
-    id: 1,
-    imgSrc: buddha,
-    uDetails: "U4956",
-    fromTime: "9:45",
-    fromLocation: "Bhadrapur",
-    weight: "25 kg",
-    duration: "45 minutes",
-    class: "class A",
-    toTime: "10:45",
-    toLocation: "Kathmandu",
-    payType: "refundable",
-    npr: "5500",
-  },
-
-  {
-    id: 2,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    duration: "45 minutes",
-    class: "class E",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 3,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    duration: "45 minutes",
-    class: "class E",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 4,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    class: "class E",
-    duration: "45 minutes",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 5,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    class: "class E",
-    duration: "45 minutes",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 6,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    class: "class E",
-    duration: "45 minutes",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 7,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    class: "class E",
-    duration: "45 minutes",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-
-  {
-    id: 8,
-    imgSrc: buddha,
-    uDetails: "U4952",
-    fromTime: "8:55",
-    fromLocation: "Bhadrapur",
-    weight: "15 kg",
-    class: "class E",
-    duration: "45 minutes",
-    toTime: "9:45",
-    toLocation: "Kathmandu",
-    payType: "non-refundable",
-    npr: "6500",
-  },
-];
-
 const Plane = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("plane"));
+    if (items) {
+      setItems(items);
+    }
+  }, []);
+
+  console.log(items, "íteo mero");
+
+  const PlaneData = [
+    {
+      id: 1,
+      imgSrc: buddha,
+      uDetails: "U4956",
+      fromTime: "9:45",
+      fromLocation: `${items?.fromOption?.value}`,
+      weight: "25 kg",
+      duration: "45 minutes",
+      class: "class A",
+      toTime: "10:45",
+      toLocation: `${items?.toOption?.value}`,
+      payType: "refundable",
+      npr: "5500",
+    },
+
+    {
+      id: 2,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      duration: "45 minutes",
+      class: "class E",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 3,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      duration: "45 minutes",
+      class: "class E",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 4,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      class: "class E",
+      duration: "45 minutes",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 5,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      class: "class E",
+      duration: "45 minutes",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 6,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      class: "class E",
+      duration: "45 minutes",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 7,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      class: "class E",
+      duration: "45 minutes",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+
+    {
+      id: 8,
+      imgSrc: buddha,
+      uDetails: "U4952",
+      fromTime: "8:55",
+      fromLocation: "Bhadrapur",
+      weight: "15 kg",
+      class: "class E",
+      duration: "45 minutes",
+      toTime: "9:45",
+      toLocation: "Kathmandu",
+      payType: "non-refundable",
+      npr: "6500",
+    },
+  ];
   const navigate = useNavigate();
 
   const [selectedFlight, setSelectedFlight] = useState(null);
@@ -138,9 +148,15 @@ const Plane = () => {
     setSelectedFlight(flight);
   };
 
-  const bookingPage = () => {
+  const bookingPage = (id) => {
+    const selectedPlane = PlaneData.find((plane) => plane.id === id);
+
+    const nprValue = selectedPlane.npr;
+    localStorage.setItem("npr", nprValue);
+    console.log("nprValue:", nprValue);
     navigate("/booking");
   };
+
   return (
     <div className="plane container">
       <div className="top-div">
@@ -167,7 +183,10 @@ const Plane = () => {
             <p>select a flight</p>
           )}
 
-          <button disabled={!selectedFlight} onClick={bookingPage}>
+          <button
+            disabled={!selectedFlight}
+            onClick={() => bookingPage(selectedFlight.id)}
+          >
             Confirm Booking
           </button>
         </div>
@@ -216,7 +235,7 @@ const Plane = () => {
 
               <div className="to-time">
                 <h2>{item.toTime}</h2>
-                <p>{item.toOption}</p>
+                <p>{item.toLocation}</p>
               </div>
 
               <div className="price">

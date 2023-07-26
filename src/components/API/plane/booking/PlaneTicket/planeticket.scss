@@ -10,39 +10,25 @@ $headerHeight: 3rem;
 $iconColor: #ffff;
 $btnBackground: #df912c;
 $btnHoverColor: #714c1c;
-.timer {
-  p {
-    justify-content: center;
-    display: flex;
-    margin-top: 2rem;
-    align-items: center;
-  }
-}
-.booking {
+
+.planeticket {
   display: flex;
   justify-content: center;
-  align-items: center;
-  .passenger-details {
-    margin: 1rem;
-    padding: 2rem;
-    color: grey;
-    font-size: 15px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    width: 750px;
-    h5 {
-      color: black;
-      font-size: 15px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    .h-5 {
-      width: max-content;
+  gap: 2rem;
+  margin: 8rem 2rem;
+  .payment-card {
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 700px;
+    gap: 1rem;
+    height: 500px;
+    border-radius: 10px;
+
+    h4 {
+      padding: 2rem;
       .underline {
         content: "";
         left: 0;
-        width: 100%;
+        width: 20%;
         height: 3px;
         top: 5px;
         position: relative;
@@ -73,87 +59,83 @@ $btnHoverColor: #714c1c;
         }
       }
     }
-    .passenger-input {
-      width: 600px;
-      height: 40px;
-      border-radius: 5px;
-      border: none;
-      background-color: rgb(206, 202, 202);
-      margin-bottom: 20px;
-      padding-left: 1rem;
+    .notice {
+      margin-left: 3rem;
+      margin-top: 2rem;
+      font-style: italic;
+      color: grey;
     }
-    .name-div {
+    .ticket-amount-div {
+      margin: 1rem 3rem;
       display: flex;
-      gap: 1rem;
-      .title-div {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-
-        .title-input {
-          height: 40px;
-          border: none;
-          border-radius: 5px;
-          background-color: rgb(247, 244, 244);
-          // margin-bottom: 20px;
-          width: 200px;
-          outline: none;
-          padding-left: 1rem;
-        }
-        .dropdown {
-          color: grey;
-        }
+      justify-content: space-between;
+      .amount {
+        font-weight: bold;
       }
     }
-    .nationality {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
 
-      .nation-input {
-        width: 400px;
-        height: 40px;
-        border-radius: 5px;
-        border: none;
-        background-color: rgb(247, 244, 244);
-        margin-bottom: 20px;
-        padding-left: 1rem;
-        color: grey;
-        outline: none;
-      }
-    }
-    .contact-div {
-      display: flex;
-      gap: 1rem;
-
-      .contact-name {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .contact-input {
-        height: 40px;
-        border-radius: 5px;
-        border: none;
-        background-color: rgb(247, 244, 244);
-        padding: 1rem;
-      }
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background-color: $primaryColor;
-      color: $iconColor;
-      border: none;
+    .payment-img {
       margin-top: 1rem;
-      margin-left: 15rem;
-      cursor: pointer;
+      display: flex;
+      margin-top: 2rem;
+      margin-left: 3rem;
+      margin-bottom: 3rem;
+      gap: 5rem;
+      
+
+      .esewa {
+        padding: 1rem;
+        border: 1px solid white;
+        &:hover {
+          padding: 1rem;
+          border: 1px solid $primaryColor;
+          border-radius: 10px;
+        }
+
+        img {
+          height: 60px;
+          width: 120px;
+        }
+      }
+      .khalti {
+        padding: 1rem;
+        border: 1px solid white;
+        &:hover {
+          padding: 1rem;
+          border: 1px solid $primaryColor;
+          border-radius: 10px;
+        }
+
+        img {
+          height: 60px;
+          width: 120px;
+        }
+      }
+    }
+    .btn-div {
+      display: flex;
+      padding-bottom: 2rem;
+      justify-content: flex-end;
+      padding-right: 2rem;
+
+      button {
+        padding: 0.5rem 2rem;
+        background-color: $primaryColor;
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
     }
   }
   .booking-details {
-    width: max-content;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    height: 500px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
     padding: 3rem;
-    margin: 1rem;
+    border-radius: 10px;
+  
     h5 {
       color: black;
       font-size: 15px;
@@ -248,10 +230,4 @@ $btnHoverColor: #714c1c;
       }
     }
   }
-}
-
-//error-message css
-
-.error-message {
-  margin-top: 10rem;
 }

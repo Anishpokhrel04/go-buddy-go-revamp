@@ -1,13 +1,11 @@
 import "./payment.scss";
 
 //importing images
-import esewa from "../../../../assets/esewa.png";
-import khalti from "../../../../assets/khalti.png";
+import esewa from "../../../../../../assets/esewa.png";
+import khalti from "../../../../../../assets/khalti.png";
 
 //importing icons
 import { MdAirlineSeatReclineNormal } from "react-icons/md";
-
-
 
 const Payment = () => {
   return (
@@ -90,6 +88,7 @@ const Payment = () => {
                 Maachhapokhari (Crystal Pump)(03:30:00 PM)Swayambhu(03:45:00
                 PM)Kalanki Dhungeadda (BusSewa Office)(04:00:00 PM)
               </p>
+              
             </div>
           </div>
 
